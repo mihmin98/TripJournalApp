@@ -49,18 +49,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        print("cacat")
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     //MARK: ACTIONS
 
@@ -94,12 +85,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             }
             
             createdUser = response.value!
-            self.present(self.createdUserAlert, animated: true, completion: nil)
+            //self.present(self.createdUserAlert, animated: true, completion: nil)
         }
         
-        // Return to login screen
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let nextViewController = storyboard.instantiateViewController(identifier: "register")
-        //self.present(nextViewController, animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindFromRegisterToLogin", sender: nil)
     }
 }
