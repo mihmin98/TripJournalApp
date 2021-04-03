@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         }
         
         if sqlite3_exec(db, "create table if not exists favorites (id integer primary key autoincrement, " +
-                            "user_id integer, trip_id integer)", nil, nil, nil) != SQLITE_OK {
+                            "user_id integer, trip_id text)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }
