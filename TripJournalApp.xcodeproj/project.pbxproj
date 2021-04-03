@@ -25,6 +25,7 @@
 		FBC78DE72618B7E100E3AA93 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DE62618B7E100E3AA93 /* Trip.swift */; };
 		FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DEB2618BB0900E3AA93 /* Favorites.swift */; };
 		FBC78DF12618BCE300E3AA93 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */; };
+		FBC78E032618C60600E3AA93 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78E022618C60600E3AA93 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		FBC78DE62618B7E100E3AA93 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FBC78DEB2618BB0900E3AA93 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		FBC78E022618C60600E3AA93 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				FBC78DE62618B7E100E3AA93 /* Trip.swift */,
 				FBC78DEB2618BB0900E3AA93 /* Favorites.swift */,
 				FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */,
+				FBC78E022618C60600E3AA93 /* Repository.swift */,
 			);
 			path = TripJournalApp;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				E4C7085026187BD300D4AFED /* ViewController.swift in Sources */,
 				FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */,
 				E4C7084C26187BD300D4AFED /* AppDelegate.swift in Sources */,
+				FBC78E032618C60600E3AA93 /* Repository.swift in Sources */,
 				FBC78DF12618BCE300E3AA93 /* LoginRequest.swift in Sources */,
 				E4C7084E26187BD300D4AFED /* SceneDelegate.swift in Sources */,
 			);

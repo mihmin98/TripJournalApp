@@ -46,8 +46,7 @@ class ViewController: UIViewController {
     }
     
     func createTables() {
-        if sqlite3_exec(db, "create table if not exists user (id integer primary key autoincrement, " +
-                            "username text, email text unique not null, favorite_id integer)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "create table if not exists user (username text, email text primary key, favorite_id integer)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }

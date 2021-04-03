@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class LoginRequest {
-
+public class LoginRequest: Codable, Identifiable {
+    
     var email: String?
     var password: String?
     

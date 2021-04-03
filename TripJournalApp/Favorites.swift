@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class Favorites: Codable {
+public class Favorites: Codable, Identifiable {
     
-    var id: Int?
-    var userId: Int?
-    var tripId: Int?
+   public var id: Int32?
+   public var userId: String?
+   public var tripId: String?
     
-    init(id: Int? = nil, userId: Int? = nil, tripId: Int? = nil) {
+    init(id: Int32? = nil, userId: String? = nil, tripId: String? = nil) {
         self.id = id
         self.userId = userId
         self.tripId = tripId
