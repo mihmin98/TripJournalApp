@@ -41,7 +41,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="9HV-PZ-kFF" kind="showDetail" id="0nJ-3t-GKp"/>
+                                    <segue destination="9HV-PZ-kFF" kind="showDetail" id="uDn-7F-A7b"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Journal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xa-Bf-Gf4">
@@ -102,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="registerPressed:" destination="9HV-PZ-kFF" eventType="touchUpInside" id="ncj-oC-p3j"/>
+                                    <action selector="register:" destination="9HV-PZ-kFF" eventType="touchUpInside" id="Lhu-5e-yHn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,9 +111,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ehr-Yy-nxu"/>
                     <connections>
-                        <outlet property="email" destination="vGT-tN-6LO" id="dwA-5s-fnR"/>
-                        <outlet property="password" destination="wO6-Ia-yCE" id="yih-bZ-rJA"/>
-                        <outlet property="username" destination="0XY-YG-xJz" id="nDK-Ur-KDZ"/>
+                        <outlet property="email" destination="vGT-tN-6LO" id="Ice-hK-84F"/>
+                        <outlet property="password" destination="wO6-Ia-yCE" id="PjT-vY-T2H"/>
+                        <outlet property="username" destination="0XY-YG-xJz" id="Rum-qW-MqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6H-a6-cnw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

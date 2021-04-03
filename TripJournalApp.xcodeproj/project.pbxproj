@@ -12,6 +12,8 @@
 		D8B0365D46E7C3FEB4356B0A /* Pods_TripJournalApp_TripJournalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D074EE366D0306B30DD51749 /* Pods_TripJournalApp_TripJournalAppUITests.framework */; };
 		E405E38B2618C23F00A73816 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E38A2618C23F00A73816 /* LoginViewController.swift */; };
 		E405E3902618C26000A73816 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E38F2618C26000A73816 /* RegisterViewController.swift */; };
+		E405E3952618D76C00A73816 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E3942618D76C00A73816 /* Constants.swift */; };
+		E405E3AD2618E78B00A73816 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E3AC2618E78B00A73816 /* CurrentUser.swift */; };
 		E4C7084C26187BD300D4AFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7084B26187BD300D4AFED /* AppDelegate.swift */; };
 		E4C7084E26187BD300D4AFED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7084D26187BD300D4AFED /* SceneDelegate.swift */; };
 		E4C7085026187BD300D4AFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7084F26187BD300D4AFED /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 		D074EE366D0306B30DD51749 /* Pods_TripJournalApp_TripJournalAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripJournalApp_TripJournalAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E405E38A2618C23F00A73816 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E405E38F2618C26000A73816 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E405E3942618D76C00A73816 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E405E3AC2618E78B00A73816 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		E4C7084826187BD300D4AFED /* TripJournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripJournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C7084B26187BD300D4AFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4C7084D26187BD300D4AFED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,10 +160,12 @@
 				E4C708842618814C00D4AFED /* Register.storyboard */,
 				FBC78DE12618AF5C00E3AA93 /* User.swift */,
 				E405E38F2618C26000A73816 /* RegisterViewController.swift */,
+				E405E3AC2618E78B00A73816 /* CurrentUser.swift */,
 				FBC78DE62618B7E100E3AA93 /* Trip.swift */,
 				FBC78DEB2618BB0900E3AA93 /* Favorites.swift */,
 				FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */,
 				FBC78E022618C60600E3AA93 /* Repository.swift */,
+				E405E3942618D76C00A73816 /* Constants.swift */,
 			);
 			path = TripJournalApp;
 			sourceTree = "<group>";
@@ -436,10 +442,12 @@
 				FBC78DE72618B7E100E3AA93 /* Trip.swift in Sources */,
 				FBC78DE22618AF5C00E3AA93 /* User.swift in Sources */,
 				E4C7085026187BD300D4AFED /* ViewController.swift in Sources */,
+				E405E3952618D76C00A73816 /* Constants.swift in Sources */,
 				FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */,
 				E4C7084C26187BD300D4AFED /* AppDelegate.swift in Sources */,
 				FBC78E032618C60600E3AA93 /* Repository.swift in Sources */,
 				FBC78DF12618BCE300E3AA93 /* LoginRequest.swift in Sources */,
+				E405E3AD2618E78B00A73816 /* CurrentUser.swift in Sources */,
 				E4C7084E26187BD300D4AFED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

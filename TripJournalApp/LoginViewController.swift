@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let emptyEmailAlert = UIAlertController(title: "Email is empty", message: "Please type email", preferredStyle: .alert)
     let emptyPasswordAlert = UIAlertController(title: "Password is empty", message: "Please type password", preferredStyle: .alert)
+    let loginAlert = UIAlertController(title: "Login error", message: "error message", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emptyEmailAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         }))
         emptyPasswordAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        }))
+        loginAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         }))
     }
     
@@ -39,23 +42,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: ACTIONS
     
     @IBAction func login(_ sender: Any) {
-        /*
-        print("email: \(email.text); password: \(password.text)")
-        */
-        
-        if (email.text?.count == 0) {
+        // Check if email is empty
+        if (email.text?.count == 0 || email.text == nil) {
             self.present(emptyEmailAlert, animated: true, completion: nil)
             return
         }
         
-        if (password.text?.count == 0) {
+        // Chekc if password is empty
+        if (password.text?.count == 0 || password.text == nil) {
             self.present(emptyPasswordAlert, animated: true, completion: nil)
             return
         }
         
-        let url = "https://ab89a8a8dbef.ngrok.io/user/login"
+        // Create login request from input
+        let loginRequest = LoginRequest(email: email.text, password: password.text)
+                
+        // Create request that contains the LoginRequest
+        let request = AF.request("\(Constants.API_URL)/user/login", method: .post, parameters: loginRequest, encoder: JSONParameterEncoder.default).validate()
+        var returnedUser = User()
+
+        // Perform request(?), check if successful and save received user
+        request.responseDecodable(of: User.self) { response in
+            guard response.error == nil else {
+                print(response.error?.errorDescription?.description ?? "default value")
+                self.loginAlert.message = response.error?.errorDescription?.description
+                self.present(self.loginAlert, animated: true, completion: nil)
+                return
+            }
+            
+            returnedUser = response.value!
+            CurrentUser.user.copy(user: returnedUser)
+        }
         
-        let request = AF.request(url, method: .post).validate()
-        request.responseJSON{ (data) in print(data) }
+        // TODO: Go to main scene
     }
 }

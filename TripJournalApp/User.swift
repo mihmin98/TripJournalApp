@@ -14,10 +14,17 @@ public class User: Codable, Identifiable {
     public var username: String?
     public var favorites: [String]
     
-    init(email: String? = nil, password: String? = nil, username: String? = nil, favorites: [String]) {
+    init(email: String? = nil, password: String? = nil, username: String? = nil, favorites: [String] = []) {
         self.email = email
         self.password = password
         self.username = username
         self.favorites = favorites
+    }
+    
+    func copy(user: User) -> Void {
+        self.email = user.email
+        self.password = user.password
+        self.username = user.username
+        self.favorites = user.favorites
     }
 }
