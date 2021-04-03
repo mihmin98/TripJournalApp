@@ -7,62 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4C7080F261871B700D4AFED /* TripJournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7080E261871B700D4AFED /* TripJournalAppApp.swift */; };
-		E4C70811261871B700D4AFED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C70810261871B700D4AFED /* ContentView.swift */; };
-		E4C70813261871B900D4AFED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C70812261871B900D4AFED /* Assets.xcassets */; };
-		E4C70816261871B900D4AFED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C70815261871B900D4AFED /* Preview Assets.xcassets */; };
-		E4C70821261871B900D4AFED /* TripJournalAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C70820261871B900D4AFED /* TripJournalAppTests.swift */; };
-		E4C7082C261871B900D4AFED /* TripJournalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7082B261871B900D4AFED /* TripJournalAppUITests.swift */; };
+		E4C7084C26187BD300D4AFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7084B26187BD300D4AFED /* AppDelegate.swift */; };
+		E4C7084E26187BD300D4AFED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7084D26187BD300D4AFED /* SceneDelegate.swift */; };
+		E4C7085026187BD300D4AFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7084F26187BD300D4AFED /* ViewController.swift */; };
+		E4C7085326187BD300D4AFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C7085126187BD300D4AFED /* Main.storyboard */; };
+		E4C7085526187BD400D4AFED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C7085426187BD400D4AFED /* Assets.xcassets */; };
+		E4C7085826187BD400D4AFED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C7085626187BD400D4AFED /* LaunchScreen.storyboard */; };
+		E4C7086326187BD400D4AFED /* TripJournalAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7086226187BD400D4AFED /* TripJournalAppTests.swift */; };
+		E4C7086E26187BD500D4AFED /* TripJournalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7086D26187BD500D4AFED /* TripJournalAppUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E4C7081D261871B900D4AFED /* PBXContainerItemProxy */ = {
+		E4C7085F26187BD400D4AFED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4C70803261871B700D4AFED /* Project object */;
+			containerPortal = E4C7084026187BD300D4AFED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E4C7080A261871B700D4AFED;
+			remoteGlobalIDString = E4C7084726187BD300D4AFED;
 			remoteInfo = TripJournalApp;
 		};
-		E4C70828261871B900D4AFED /* PBXContainerItemProxy */ = {
+		E4C7086A26187BD500D4AFED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4C70803261871B700D4AFED /* Project object */;
+			containerPortal = E4C7084026187BD300D4AFED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E4C7080A261871B700D4AFED;
+			remoteGlobalIDString = E4C7084726187BD300D4AFED;
 			remoteInfo = TripJournalApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E4C7080B261871B700D4AFED /* TripJournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripJournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4C7080E261871B700D4AFED /* TripJournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJournalAppApp.swift; sourceTree = "<group>"; };
-		E4C70810261871B700D4AFED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E4C70812261871B900D4AFED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E4C70815261871B900D4AFED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E4C70817261871B900D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4C7081C261871B900D4AFED /* TripJournalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripJournalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4C70820261871B900D4AFED /* TripJournalAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJournalAppTests.swift; sourceTree = "<group>"; };
-		E4C70822261871B900D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4C70827261871B900D4AFED /* TripJournalAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripJournalAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4C7082B261871B900D4AFED /* TripJournalAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJournalAppUITests.swift; sourceTree = "<group>"; };
-		E4C7082D261871B900D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C7084826187BD300D4AFED /* TripJournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripJournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C7084B26187BD300D4AFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4C7084D26187BD300D4AFED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E4C7084F26187BD300D4AFED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4C7085226187BD300D4AFED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4C7085426187BD400D4AFED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4C7085726187BD400D4AFED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4C7085926187BD400D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C7085E26187BD400D4AFED /* TripJournalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripJournalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C7086226187BD400D4AFED /* TripJournalAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJournalAppTests.swift; sourceTree = "<group>"; };
+		E4C7086426187BD400D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C7086926187BD500D4AFED /* TripJournalAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripJournalAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C7086D26187BD500D4AFED /* TripJournalAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJournalAppUITests.swift; sourceTree = "<group>"; };
+		E4C7086F26187BD500D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E4C70808261871B700D4AFED /* Frameworks */ = {
+		E4C7084526187BD300D4AFED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C70819261871B900D4AFED /* Frameworks */ = {
+		E4C7085B26187BD400D4AFED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C70824261871B900D4AFED /* Frameworks */ = {
+		E4C7086626187BD500D4AFED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,60 +76,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E4C70802261871B700D4AFED = {
+		E4C7083F26187BD300D4AFED = {
 			isa = PBXGroup;
 			children = (
-				E4C7080D261871B700D4AFED /* TripJournalApp */,
-				E4C7081F261871B900D4AFED /* TripJournalAppTests */,
-				E4C7082A261871B900D4AFED /* TripJournalAppUITests */,
-				E4C7080C261871B700D4AFED /* Products */,
+				E4C7084A26187BD300D4AFED /* TripJournalApp */,
+				E4C7086126187BD400D4AFED /* TripJournalAppTests */,
+				E4C7086C26187BD500D4AFED /* TripJournalAppUITests */,
+				E4C7084926187BD300D4AFED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E4C7080C261871B700D4AFED /* Products */ = {
+		E4C7084926187BD300D4AFED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4C7080B261871B700D4AFED /* TripJournalApp.app */,
-				E4C7081C261871B900D4AFED /* TripJournalAppTests.xctest */,
-				E4C70827261871B900D4AFED /* TripJournalAppUITests.xctest */,
+				E4C7084826187BD300D4AFED /* TripJournalApp.app */,
+				E4C7085E26187BD400D4AFED /* TripJournalAppTests.xctest */,
+				E4C7086926187BD500D4AFED /* TripJournalAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E4C7080D261871B700D4AFED /* TripJournalApp */ = {
+		E4C7084A26187BD300D4AFED /* TripJournalApp */ = {
 			isa = PBXGroup;
 			children = (
-				E4C7080E261871B700D4AFED /* TripJournalAppApp.swift */,
-				E4C70810261871B700D4AFED /* ContentView.swift */,
-				E4C70812261871B900D4AFED /* Assets.xcassets */,
-				E4C70817261871B900D4AFED /* Info.plist */,
-				E4C70814261871B900D4AFED /* Preview Content */,
+				E4C7084B26187BD300D4AFED /* AppDelegate.swift */,
+				E4C7084D26187BD300D4AFED /* SceneDelegate.swift */,
+				E4C7084F26187BD300D4AFED /* ViewController.swift */,
+				E4C7085126187BD300D4AFED /* Main.storyboard */,
+				E4C7085426187BD400D4AFED /* Assets.xcassets */,
+				E4C7085626187BD400D4AFED /* LaunchScreen.storyboard */,
+				E4C7085926187BD400D4AFED /* Info.plist */,
 			);
 			path = TripJournalApp;
 			sourceTree = "<group>";
 		};
-		E4C70814261871B900D4AFED /* Preview Content */ = {
+		E4C7086126187BD400D4AFED /* TripJournalAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4C70815261871B900D4AFED /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E4C7081F261871B900D4AFED /* TripJournalAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				E4C70820261871B900D4AFED /* TripJournalAppTests.swift */,
-				E4C70822261871B900D4AFED /* Info.plist */,
+				E4C7086226187BD400D4AFED /* TripJournalAppTests.swift */,
+				E4C7086426187BD400D4AFED /* Info.plist */,
 			);
 			path = TripJournalAppTests;
 			sourceTree = "<group>";
 		};
-		E4C7082A261871B900D4AFED /* TripJournalAppUITests */ = {
+		E4C7086C26187BD500D4AFED /* TripJournalAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E4C7082B261871B900D4AFED /* TripJournalAppUITests.swift */,
-				E4C7082D261871B900D4AFED /* Info.plist */,
+				E4C7086D26187BD500D4AFED /* TripJournalAppUITests.swift */,
+				E4C7086F26187BD500D4AFED /* Info.plist */,
 			);
 			path = TripJournalAppUITests;
 			sourceTree = "<group>";
@@ -133,13 +131,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4C7080A261871B700D4AFED /* TripJournalApp */ = {
+		E4C7084726187BD300D4AFED /* TripJournalApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4C70830261871B900D4AFED /* Build configuration list for PBXNativeTarget "TripJournalApp" */;
+			buildConfigurationList = E4C7087226187BD500D4AFED /* Build configuration list for PBXNativeTarget "TripJournalApp" */;
 			buildPhases = (
-				E4C70807261871B700D4AFED /* Sources */,
-				E4C70808261871B700D4AFED /* Frameworks */,
-				E4C70809261871B700D4AFED /* Resources */,
+				E4C7084426187BD300D4AFED /* Sources */,
+				E4C7084526187BD300D4AFED /* Frameworks */,
+				E4C7084626187BD300D4AFED /* Resources */,
 			);
 			buildRules = (
 			);
@@ -147,68 +145,68 @@
 			);
 			name = TripJournalApp;
 			productName = TripJournalApp;
-			productReference = E4C7080B261871B700D4AFED /* TripJournalApp.app */;
+			productReference = E4C7084826187BD300D4AFED /* TripJournalApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4C7081B261871B900D4AFED /* TripJournalAppTests */ = {
+		E4C7085D26187BD400D4AFED /* TripJournalAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4C70833261871B900D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppTests" */;
+			buildConfigurationList = E4C7087526187BD500D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppTests" */;
 			buildPhases = (
-				E4C70818261871B900D4AFED /* Sources */,
-				E4C70819261871B900D4AFED /* Frameworks */,
-				E4C7081A261871B900D4AFED /* Resources */,
+				E4C7085A26187BD400D4AFED /* Sources */,
+				E4C7085B26187BD400D4AFED /* Frameworks */,
+				E4C7085C26187BD400D4AFED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E4C7081E261871B900D4AFED /* PBXTargetDependency */,
+				E4C7086026187BD400D4AFED /* PBXTargetDependency */,
 			);
 			name = TripJournalAppTests;
 			productName = TripJournalAppTests;
-			productReference = E4C7081C261871B900D4AFED /* TripJournalAppTests.xctest */;
+			productReference = E4C7085E26187BD400D4AFED /* TripJournalAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E4C70826261871B900D4AFED /* TripJournalAppUITests */ = {
+		E4C7086826187BD500D4AFED /* TripJournalAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4C70836261871B900D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppUITests" */;
+			buildConfigurationList = E4C7087826187BD500D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppUITests" */;
 			buildPhases = (
-				E4C70823261871B900D4AFED /* Sources */,
-				E4C70824261871B900D4AFED /* Frameworks */,
-				E4C70825261871B900D4AFED /* Resources */,
+				E4C7086526187BD500D4AFED /* Sources */,
+				E4C7086626187BD500D4AFED /* Frameworks */,
+				E4C7086726187BD500D4AFED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E4C70829261871B900D4AFED /* PBXTargetDependency */,
+				E4C7086B26187BD500D4AFED /* PBXTargetDependency */,
 			);
 			name = TripJournalAppUITests;
 			productName = TripJournalAppUITests;
-			productReference = E4C70827261871B900D4AFED /* TripJournalAppUITests.xctest */;
+			productReference = E4C7086926187BD500D4AFED /* TripJournalAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E4C70803261871B700D4AFED /* Project object */ = {
+		E4C7084026187BD300D4AFED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					E4C7080A261871B700D4AFED = {
+					E4C7084726187BD300D4AFED = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					E4C7081B261871B900D4AFED = {
+					E4C7085D26187BD400D4AFED = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = E4C7080A261871B700D4AFED;
+						TestTargetID = E4C7084726187BD300D4AFED;
 					};
-					E4C70826261871B900D4AFED = {
+					E4C7086826187BD500D4AFED = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = E4C7080A261871B700D4AFED;
+						TestTargetID = E4C7084726187BD300D4AFED;
 					};
 				};
 			};
-			buildConfigurationList = E4C70806261871B700D4AFED /* Build configuration list for PBXProject "TripJournalApp" */;
+			buildConfigurationList = E4C7084326187BD300D4AFED /* Build configuration list for PBXProject "TripJournalApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,36 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = E4C70802261871B700D4AFED;
-			productRefGroup = E4C7080C261871B700D4AFED /* Products */;
+			mainGroup = E4C7083F26187BD300D4AFED;
+			productRefGroup = E4C7084926187BD300D4AFED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4C7080A261871B700D4AFED /* TripJournalApp */,
-				E4C7081B261871B900D4AFED /* TripJournalAppTests */,
-				E4C70826261871B900D4AFED /* TripJournalAppUITests */,
+				E4C7084726187BD300D4AFED /* TripJournalApp */,
+				E4C7085D26187BD400D4AFED /* TripJournalAppTests */,
+				E4C7086826187BD500D4AFED /* TripJournalAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E4C70809261871B700D4AFED /* Resources */ = {
+		E4C7084626187BD300D4AFED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C70816261871B900D4AFED /* Preview Assets.xcassets in Resources */,
-				E4C70813261871B900D4AFED /* Assets.xcassets in Resources */,
+				E4C7085826187BD400D4AFED /* LaunchScreen.storyboard in Resources */,
+				E4C7085526187BD400D4AFED /* Assets.xcassets in Resources */,
+				E4C7085326187BD300D4AFED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C7081A261871B900D4AFED /* Resources */ = {
+		E4C7085C26187BD400D4AFED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C70825261871B900D4AFED /* Resources */ = {
+		E4C7086726187BD500D4AFED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,48 +254,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E4C70807261871B700D4AFED /* Sources */ = {
+		E4C7084426187BD300D4AFED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C70811261871B700D4AFED /* ContentView.swift in Sources */,
-				E4C7080F261871B700D4AFED /* TripJournalAppApp.swift in Sources */,
+				E4C7085026187BD300D4AFED /* ViewController.swift in Sources */,
+				E4C7084C26187BD300D4AFED /* AppDelegate.swift in Sources */,
+				E4C7084E26187BD300D4AFED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C70818261871B900D4AFED /* Sources */ = {
+		E4C7085A26187BD400D4AFED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C70821261871B900D4AFED /* TripJournalAppTests.swift in Sources */,
+				E4C7086326187BD400D4AFED /* TripJournalAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C70823261871B900D4AFED /* Sources */ = {
+		E4C7086526187BD500D4AFED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C7082C261871B900D4AFED /* TripJournalAppUITests.swift in Sources */,
+				E4C7086E26187BD500D4AFED /* TripJournalAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E4C7081E261871B900D4AFED /* PBXTargetDependency */ = {
+		E4C7086026187BD400D4AFED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4C7080A261871B700D4AFED /* TripJournalApp */;
-			targetProxy = E4C7081D261871B900D4AFED /* PBXContainerItemProxy */;
+			target = E4C7084726187BD300D4AFED /* TripJournalApp */;
+			targetProxy = E4C7085F26187BD400D4AFED /* PBXContainerItemProxy */;
 		};
-		E4C70829261871B900D4AFED /* PBXTargetDependency */ = {
+		E4C7086B26187BD500D4AFED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4C7080A261871B700D4AFED /* TripJournalApp */;
-			targetProxy = E4C70828261871B900D4AFED /* PBXContainerItemProxy */;
+			target = E4C7084726187BD300D4AFED /* TripJournalApp */;
+			targetProxy = E4C7086A26187BD500D4AFED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		E4C7085126187BD300D4AFED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C7085226187BD300D4AFED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4C7085626187BD400D4AFED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C7085726187BD400D4AFED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		E4C7082E261871B900D4AFED /* Debug */ = {
+		E4C7087026187BD500D4AFED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -357,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		E4C7082F261871B900D4AFED /* Release */ = {
+		E4C7087126187BD500D4AFED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -412,16 +431,13 @@
 			};
 			name = Release;
 		};
-		E4C70831261871B900D4AFED /* Debug */ = {
+		E4C7087326187BD500D4AFED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TripJournalApp/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TripJournalApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,16 +449,13 @@
 			};
 			name = Debug;
 		};
-		E4C70832261871B900D4AFED /* Release */ = {
+		E4C7087426187BD500D4AFED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TripJournalApp/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TripJournalApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,14 +467,14 @@
 			};
 			name = Release;
 		};
-		E4C70834261871B900D4AFED /* Debug */ = {
+		E4C7087626187BD500D4AFED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TripJournalAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,14 +488,14 @@
 			};
 			name = Debug;
 		};
-		E4C70835261871B900D4AFED /* Release */ = {
+		E4C7087726187BD500D4AFED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TripJournalAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,7 +509,7 @@
 			};
 			name = Release;
 		};
-		E4C70837261871B900D4AFED /* Debug */ = {
+		E4C7087926187BD500D4AFED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -515,7 +528,7 @@
 			};
 			name = Debug;
 		};
-		E4C70838261871B900D4AFED /* Release */ = {
+		E4C7087A26187BD500D4AFED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -537,43 +550,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4C70806261871B700D4AFED /* Build configuration list for PBXProject "TripJournalApp" */ = {
+		E4C7084326187BD300D4AFED /* Build configuration list for PBXProject "TripJournalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4C7082E261871B900D4AFED /* Debug */,
-				E4C7082F261871B900D4AFED /* Release */,
+				E4C7087026187BD500D4AFED /* Debug */,
+				E4C7087126187BD500D4AFED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4C70830261871B900D4AFED /* Build configuration list for PBXNativeTarget "TripJournalApp" */ = {
+		E4C7087226187BD500D4AFED /* Build configuration list for PBXNativeTarget "TripJournalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4C70831261871B900D4AFED /* Debug */,
-				E4C70832261871B900D4AFED /* Release */,
+				E4C7087326187BD500D4AFED /* Debug */,
+				E4C7087426187BD500D4AFED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4C70833261871B900D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppTests" */ = {
+		E4C7087526187BD500D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4C70834261871B900D4AFED /* Debug */,
-				E4C70835261871B900D4AFED /* Release */,
+				E4C7087626187BD500D4AFED /* Debug */,
+				E4C7087726187BD500D4AFED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4C70836261871B900D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppUITests" */ = {
+		E4C7087826187BD500D4AFED /* Build configuration list for PBXNativeTarget "TripJournalAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4C70837261871B900D4AFED /* Debug */,
-				E4C70838261871B900D4AFED /* Release */,
+				E4C7087926187BD500D4AFED /* Debug */,
+				E4C7087A26187BD500D4AFED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E4C70803261871B700D4AFED /* Project object */;
+	rootObject = E4C7084026187BD300D4AFED /* Project object */;
 }
