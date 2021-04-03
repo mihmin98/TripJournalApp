@@ -76,6 +76,25 @@ public class Repository {
         return readTrips(query: query)
     }
     
+    public func delete(tripId: String?) {
+        if (db == nil) {
+            db = openDB()
+        }
+        
+        let deleteStatementString = "DELETE FROM trips WHERE id = \(String(describing: tripId));"
+        var deleteStatement:OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
+            sqlite3_bind_text(deleteStatement, 1, tripId, -1, nil)
+            if sqlite3_step(deleteStatement) != SQLITE_DONE {
+                print("Could not delete row")
+            }
+        }
+        sqlite3_finalize(deleteStatement)
+        closeDbConnection()
+        
+    }
+    
     private func readTrips(query: String) -> [Trip] {
         if db == nil {
             db = openDB()
