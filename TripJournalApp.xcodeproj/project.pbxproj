@@ -15,6 +15,7 @@
 		E4C7085826187BD400D4AFED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C7085626187BD400D4AFED /* LaunchScreen.storyboard */; };
 		E4C7086326187BD400D4AFED /* TripJournalAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7086226187BD400D4AFED /* TripJournalAppTests.swift */; };
 		E4C7086E26187BD500D4AFED /* TripJournalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7086D26187BD500D4AFED /* TripJournalAppUITests.swift */; };
+		E4C708852618814C00D4AFED /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C708842618814C00D4AFED /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E4C7086926187BD500D4AFED /* TripJournalAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripJournalAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C7086D26187BD500D4AFED /* TripJournalAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripJournalAppUITests.swift; sourceTree = "<group>"; };
 		E4C7086F26187BD500D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C708842618814C00D4AFED /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E4C7085426187BD400D4AFED /* Assets.xcassets */,
 				E4C7085626187BD400D4AFED /* LaunchScreen.storyboard */,
 				E4C7085926187BD400D4AFED /* Info.plist */,
+				E4C708842618814C00D4AFED /* Register.storyboard */,
 			);
 			path = TripJournalApp;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				E4C7085826187BD400D4AFED /* LaunchScreen.storyboard in Resources */,
 				E4C7085526187BD400D4AFED /* Assets.xcassets in Resources */,
 				E4C7085326187BD300D4AFED /* Main.storyboard in Resources */,
+				E4C708852618814C00D4AFED /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
