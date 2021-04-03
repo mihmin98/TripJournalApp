@@ -19,7 +19,7 @@ public class Trip: Codable, Identifiable {
     public var description: String?
     public var likedBy: [String]
     
-    init(id: String? = nil, ownerId: String? = nil, name: String? = nil, photo: String? = nil, destinationName: String? = nil, destinationCoords: String? = nil, cost: Double, rating: Int32, description: String? = nil, likedBy: [String]) {
+    init(id: String? = nil, ownerId: String? = nil, name: String? = nil, photo: String? = nil, destinationName: String? = nil, destinationCoords: String? = nil, cost: Double, rating: Int32, description: String? = nil, likedBy: [String] = []) {
         self.id = id
         self.ownerId = ownerId
         self.name = name

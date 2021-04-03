@@ -33,6 +33,13 @@ public class Repository {
         return db
     }
     
+    func closeDbConnection() {
+        if sqlite3_close(db) != SQLITE_OK {
+            print("error closing database")
+        }
+        db = nil
+    }
+    
     public func addTrip(trip: Trip) {
         if db == nil {
             db = openDB()
@@ -56,5 +63,45 @@ public class Repository {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting: \(errmsg)")
         }
+        closeDbConnection()
     }
+    
+    public func readMyTrips() -> [Trip] {
+        let query: String = "SELECT * FROM trips WHERE ownerId = 'ceva';"
+        return readTrips(query: query)
+    }
+    
+    public func readFavoriteTrips() -> [Trip] {
+        let query: String = "SELECT t.id, t.ownerId, t.name, t.photo, t.destinationName, t.destinationCoords, t.cost, t.rating, t.description FROM trips t JOIN favorites f ON t.id = f.tripId WHERE f.ownerId = 'ceva';"
+        return readTrips(query: query)
+    }
+    
+    private func readTrips(query: String) -> [Trip] {
+        if db == nil {
+            db = openDB()
+        }
+        
+        var queryStatement:OpaquePointer? = nil
+        var trips:[Trip] = []
+        
+        if (sqlite3_prepare_v2(db, query, -1, &queryStatement, nil) == SQLITE_OK) {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let id = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let ownerId = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let photo = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+                let destinationName = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
+                let destinationCoords = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
+                let cost = sqlite3_column_double(queryStatement, 7)
+                let rating = sqlite3_column_int(queryStatement, 8)
+                let description = String(describing: String(cString: sqlite3_column_text(queryStatement, 9)))
+                
+                trips.append(Trip(id: id, ownerId: ownerId, name: name, photo: photo, destinationName: destinationName, destinationCoords: destinationCoords, cost: cost, rating: rating, description: description))
+            }
+        }
+        sqlite3_finalize(queryStatement)
+        closeDbConnection()
+        return trips
+    }
+    
 }
