@@ -35,12 +35,13 @@ extension HomeViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("pressed: \(indexPath.item)")
         
-        // TODO: segue to another scene
+        // Segue to another scene
         let viewController = (self.storyboard?.instantiateViewController(identifier: "viewMyTrip"))! as TripViewController
         viewController.trip = myTrips![indexPath.item]
         viewController.modalPresentationStyle = .fullScreen
         viewController.modalTransitionStyle = .crossDissolve
         self.present(viewController, animated: true, completion: nil)
+        //self.present(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
     }
 }
 
