@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         // Get the trips from local db
         let repo = Repository()
         myTrips = repo.readMyTrips()
+        
     }
 }
 
@@ -35,6 +36,11 @@ extension HomeViewController: UICollectionViewDelegate {
         print("pressed: \(indexPath.item)")
         
         // TODO: segue to another scene
+        let viewController = (self.storyboard?.instantiateViewController(identifier: "viewMyTrip"))! as TripViewController
+        viewController.trip = myTrips![indexPath.item]
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalTransitionStyle = .crossDissolve
+        self.present(viewController, animated: true, completion: nil)
     }
 }
 

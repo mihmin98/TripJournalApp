@@ -126,7 +126,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="VnY-Ro-04Y" kind="relationship" relationship="viewControllers" id="dtQ-aB-xmR"/>
-			<segue destination="q8o-hw-u87" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
+                        <segue destination="q8o-hw-u87" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKs-17-m5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,7 +216,7 @@
         <!--Trip View Controller-->
         <scene sceneID="Ct5-Tk-V1y">
             <objects>
-                <viewController storyboardIdentifier="trip" id="wKL-0f-xh7" customClass="TripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewMyTrip" id="wKL-0f-xh7" customClass="TripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zSl-jc-8ka">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,8 +307,6 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editAction" destination="oM1-XH-h9h" id="nr9-L5-8bw"/>
-                        <outlet property="editButton" destination="oM1-XH-h9h" id="nkA-X9-G5P"/>
                         <outlet property="tripCost" destination="eFt-HY-d8j" id="wYC-os-XUv"/>
                         <outlet property="tripDescription" destination="RFh-2M-GOc" id="YgJ-b6-SUI"/>
                         <outlet property="tripLocation" destination="lay-ST-HDR" id="NBp-TJ-fPp"/>
@@ -319,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xad-DK-W9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872.46376811594212" y="-567.1875"/>
+            <point key="canvasLocation" x="5577" y="-328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4b-GU-wEa">
