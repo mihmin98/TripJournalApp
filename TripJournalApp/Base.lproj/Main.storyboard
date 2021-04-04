@@ -125,8 +125,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="q8o-hw-u87" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
                         <segue destination="VnY-Ro-04Y" kind="relationship" relationship="viewControllers" id="dtQ-aB-xmR"/>
+			<segue destination="q8o-hw-u87" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKs-17-m5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -33,7 +33,8 @@ extension HomeViewController: UICollectionViewDelegate {
         // called when tapping cell
         collectionView.deselectItem(at: indexPath, animated: true)
         print("pressed: \(indexPath.item)")
-        //print("trip: \(myTrips[indexPath.item])")
+        
+        // TODO: segue to another scene
     }
 }
 
@@ -45,7 +46,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripViewCell.identifier, for: indexPath) as! TripViewCell
         
-        cell.configure(with: "Test String")
+        cell.configure(with: myTrips![indexPath.item])
         
         return cell
     }

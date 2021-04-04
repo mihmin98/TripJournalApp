@@ -34,6 +34,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrT-NC-3gE">
+                        <rect key="frame" x="284" y="128" width="19" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N3S-di-Hr8">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="202"/>
                     </imageView>
@@ -48,11 +54,14 @@
                 <constraint firstItem="Rxe-Bd-ff2" firstAttribute="top" secondItem="3nw-Za-Ncb" secondAttribute="bottom" constant="16" id="pHa-vb-aYo"/>
                 <constraint firstItem="3nw-Za-Ncb" firstAttribute="leading" secondItem="N3S-di-Hr8" secondAttribute="trailing" constant="16" id="qhc-NY-ukW"/>
                 <constraint firstItem="Rxe-Bd-ff2" firstAttribute="leading" secondItem="N3S-di-Hr8" secondAttribute="trailing" constant="16" id="tTu-BA-YA4"/>
+                <constraint firstItem="KrT-NC-3gE" firstAttribute="leading" secondItem="N3S-di-Hr8" secondAttribute="trailing" constant="16" id="uoQ-dd-xIA"/>
                 <constraint firstItem="3nw-Za-Ncb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="w3c-c4-yc9"/>
                 <constraint firstAttribute="bottom" secondItem="N3S-di-Hr8" secondAttribute="bottom" id="wn3-8L-q4C"/>
+                <constraint firstItem="yju-wp-qKv" firstAttribute="top" secondItem="KrT-NC-3gE" secondAttribute="bottom" constant="16" id="x6a-pZ-aHG"/>
             </constraints>
             <size key="customSize" width="406" height="202"/>
             <connections>
+                <outlet property="tripAuthor" destination="KrT-NC-3gE" id="lDy-w8-KaV"/>
                 <outlet property="tripDestinationLabel" destination="Rxe-Bd-ff2" id="P62-GH-Ed3"/>
                 <outlet property="tripNameLabel" destination="3nw-Za-Ncb" id="RzF-kE-0DW"/>
                 <outlet property="tripPhoto" destination="N3S-di-Hr8" id="fkp-NY-nxH"/>

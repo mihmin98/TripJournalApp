@@ -13,6 +13,7 @@ class TripViewCell: UICollectionViewCell {
     @IBOutlet var tripNameLabel: UILabel!
     @IBOutlet var tripDestinationLabel: UILabel!
     @IBOutlet var tripRatingLabel: UILabel!
+    @IBOutlet var tripAuthor: UILabel!
     
     static let identifier = "TripViewCell"
     
@@ -21,10 +22,11 @@ class TripViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func configure(with text: String) {
-        tripNameLabel.text = text
-        tripDestinationLabel.text = "trip destination"
-        tripRatingLabel.text = "5/5"
+    public func configure(with trip: Trip) {
+        tripNameLabel.text = trip.name
+        tripDestinationLabel.text = trip.destinationName
+        tripRatingLabel.text = "\(trip.rating)/5"
+        tripAuthor.text = "by \(trip.ownerId!)"
     }
 
     static func nib() -> UINib {

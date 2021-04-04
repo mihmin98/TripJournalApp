@@ -80,13 +80,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             returnedUser = response.value!
             CurrentUser.user.copy(user: returnedUser)
+            
+            // Go to home screen
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: "home")
+            homeViewController?.modalPresentationStyle = .fullScreen
+            homeViewController?.modalTransitionStyle = .crossDissolve
+            self.present(homeViewController!, animated: true, completion: nil)
         }
         
-        // Go to home screen
-        let homeViewController = storyboard?.instantiateViewController(identifier: "home")
-        homeViewController?.modalPresentationStyle = .fullScreen
-        homeViewController?.modalTransitionStyle = .crossDissolve
-        present(homeViewController!, animated: true, completion: nil)
+        
     }
     
     //MARK: DATABASE

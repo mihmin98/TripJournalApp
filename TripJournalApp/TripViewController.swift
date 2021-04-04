@@ -26,10 +26,10 @@ class TripViewController: UIViewController {
 
 //        self.tripPhoto. = trip.photo  TODO
         
-        self.tripName.text = "Name: \(String(describing: trip?.name))"
-        self.tripLocation.text = "Location: \(String(describing: trip?.destinationName))"
-        self.tripCost.text = "Cost: \(String(describing: trip?.cost))"
-        self.tripRating.text = "Rating: \(String(describing: trip?.rating)) / 5"
-        self.tripDescription.text = "Description: \(String(describing: trip?.description))"
-}
+        self.tripName.text = "Name: \(String(describing: trip.name))"
+        self.tripLocation.text = "Location: \(String(describing: trip.destinationName))"
+        self.tripCost.text = "Cost: \(String(describing: trip.cost))"
+        self.tripRating.text = "Rating: \(String(describing: trip.rating)) / 5"
+        self.tripDescription.text = "Description: \(String(describing: trip.description))"
+    }
 }
