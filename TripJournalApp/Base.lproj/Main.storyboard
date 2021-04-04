@@ -198,6 +198,101 @@
             </objects>
             <point key="canvasLocation" x="4498.5507246376819" y="-328.125"/>
         </scene>
+        <!--Trip View Controller-->
+        <scene sceneID="Ct5-Tk-V1y">
+            <objects>
+                <viewController storyboardIdentifier="trip" id="wKL-0f-xh7" customClass="TripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zSl-jc-8ka">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ngR-xo-Ot1">
+                                <rect key="frame" x="16" y="60" width="382" height="215"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripPhoto">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="eLF-bS-z0U"/>
+                                    <constraint firstAttribute="width" secondItem="ngR-xo-Ot1" secondAttribute="height" multiplier="16:9" id="x7d-sB-fXu"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fT-gh-HlC">
+                                <rect key="frame" x="16" y="307" width="382" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripName">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lay-ST-HDR">
+                                <rect key="frame" x="16" y="359.5" width="382" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripLocation">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFt-HY-d8j">
+                                <rect key="frame" x="16" y="412.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-2e-dM7">
+                                <rect key="frame" x="16" y="465.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFh-2M-GOc">
+                                <rect key="frame" x="16" y="518.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d8X-fm-e2u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ngR-xo-Ot1" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="5tp-t6-omq"/>
+                            <constraint firstItem="Vox-2e-dM7" firstAttribute="top" secondItem="eFt-HY-d8j" secondAttribute="bottom" constant="32" id="64r-9Z-Ch2"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="eFt-HY-d8j" secondAttribute="trailing" constant="16" id="7nI-aW-W8i"/>
+                            <constraint firstItem="lay-ST-HDR" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="AgK-cN-rVa"/>
+                            <constraint firstItem="Vox-2e-dM7" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="N8N-lP-Jla"/>
+                            <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="Ryp-vp-tdf"/>
+                            <constraint firstItem="ngR-xo-Ot1" firstAttribute="centerX" secondItem="zSl-jc-8ka" secondAttribute="centerX" id="TKy-Ua-1ji"/>
+                            <constraint firstItem="RFh-2M-GOc" firstAttribute="top" secondItem="Vox-2e-dM7" secondAttribute="bottom" constant="32" id="XrW-gm-5E9"/>
+                            <constraint firstItem="ngR-xo-Ot1" firstAttribute="top" secondItem="d8X-fm-e2u" secondAttribute="top" constant="16" id="bOS-xc-0c8"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="Vox-2e-dM7" secondAttribute="trailing" constant="16" id="dL2-ST-KUG"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="lay-ST-HDR" secondAttribute="trailing" constant="16" id="ePg-Qt-JLe"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="0fT-gh-HlC" secondAttribute="trailing" constant="16" id="eS5-WZ-LTm"/>
+                            <constraint firstItem="eFt-HY-d8j" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="gFm-KL-zdn"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="eFt-HY-d8j" secondAttribute="trailing" constant="16" id="kAG-h8-RdU"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="RFh-2M-GOc" secondAttribute="trailing" constant="16" id="kAR-FQ-vZk"/>
+                            <constraint firstItem="lay-ST-HDR" firstAttribute="top" secondItem="0fT-gh-HlC" secondAttribute="bottom" constant="32" id="kt9-3W-AnZ"/>
+                            <constraint firstItem="RFh-2M-GOc" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="pww-4J-8XI"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="ngR-xo-Ot1" secondAttribute="trailing" constant="16" id="q6e-C7-ejm"/>
+                            <constraint firstItem="0fT-gh-HlC" firstAttribute="top" secondItem="ngR-xo-Ot1" secondAttribute="bottom" constant="32" id="s8Q-Yd-Zae"/>
+                            <constraint firstItem="0fT-gh-HlC" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="ugA-Vg-2eq"/>
+                            <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="veu-9a-CLT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tripCost" destination="eFt-HY-d8j" id="wYC-os-XUv"/>
+                        <outlet property="tripDescription" destination="RFh-2M-GOc" id="YgJ-b6-SUI"/>
+                        <outlet property="tripLocation" destination="lay-ST-HDR" id="NBp-TJ-fPp"/>
+                        <outlet property="tripName" destination="0fT-gh-HlC" id="t4b-FN-8we"/>
+                        <outlet property="tripPhoto" destination="ngR-xo-Ot1" id="JS3-sm-xEu"/>
+                        <outlet property="tripRating" destination="Vox-2e-dM7" id="AkD-pa-CsU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xad-DK-W9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.46376811594212" y="-567.1875"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4b-GU-wEa">
             <objects>
