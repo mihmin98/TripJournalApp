@@ -13,6 +13,9 @@ public class Repository {
     internal init() {
         self.db = openDB()
     }
+    
+    internal let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)
+    let SQLITE_TRANSIENT = unsafeBitCast(OpaquePointer(bitPattern: -1), to: sqlite3_destructor_type.self)
 
     var db: OpaquePointer?
     
@@ -48,21 +51,29 @@ public class Repository {
         let insertStatementString = "insert into trip (id, ownerId, name, photo, destinationName, destinationCoords, cost, rating, description) values (?,?,?,?,?,?,?,?,?);"
         var insertStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_text(insertStatement, 1, trip.id, -1, nil)
-            sqlite3_bind_text(insertStatement, 2, trip.ownerId, -1, nil)
-            sqlite3_bind_text(insertStatement, 3, trip.name, -1, nil)
-            sqlite3_bind_text(insertStatement, 4, trip.photo, -1, nil)
-            sqlite3_bind_text(insertStatement, 5, trip.destinationName, -1, nil)
-            sqlite3_bind_text(insertStatement, 6, trip.destinationCoords, -1, nil)
+            let tripId = trip.id! as NSString
+            sqlite3_bind_text(insertStatement, 1, tripId.utf8String, -1, SQLITE_TRANSIENT)
+            let ownerId = trip.ownerId! as NSString
+            sqlite3_bind_text(insertStatement, 2, ownerId.utf8String, -1, SQLITE_TRANSIENT)
+            let tripName = trip.name! as NSString
+            sqlite3_bind_text(insertStatement, 3, tripName.utf8String, -1, SQLITE_TRANSIENT)
+            let tripPhoto = trip.photo! as NSString
+            sqlite3_bind_text(insertStatement, 4, tripPhoto.utf8String, -1, SQLITE_TRANSIENT)
+            let tripDestinationName = trip.destinationName! as NSString
+            sqlite3_bind_text(insertStatement, 5, tripDestinationName.utf8String, -1, SQLITE_TRANSIENT)
+            let tripDestinationCoords = trip.destinationCoords! as NSString
+            sqlite3_bind_text(insertStatement, 6, tripDestinationCoords.utf8String, -1, SQLITE_TRANSIENT)
             sqlite3_bind_double(insertStatement, 7, trip.cost)
             sqlite3_bind_int(insertStatement, 8, trip.rating)
-            sqlite3_bind_text(insertStatement, 9, trip.description, -1, nil)
+            let tripDescription = trip.description! as NSString
+            sqlite3_bind_text(insertStatement, 9, tripDescription.utf8String, -1, SQLITE_TRANSIENT)
         }
 
         if sqlite3_step(insertStatement) != SQLITE_DONE {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting: \(errmsg)")
         }
+        sqlite3_finalize(insertStatement)
         closeDbConnection()
     }
     
@@ -71,7 +82,7 @@ public class Repository {
             db = openDB()
         }
         
-        let updateStatementString = "UPDATE trips SET ownerId = ?, name = ?, photo = ?, destinationName = ?, destinationCoords = ?, cost = ?, rating = ?, description = ?;"
+        let updateStatementString = "UPDATE trip SET ownerId = ?, name = ?, photo = ?, destinationName = ?, destinationCoords = ?, cost = ?, rating = ?, description = ?;"
         var updateStatement: OpaquePointer? = nil;
         if sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK {
             if sqlite3_step(updateStatement) != SQLITE_DONE {
@@ -83,12 +94,12 @@ public class Repository {
     }
     
     public func readMyTrips() -> [Trip] {
-        let query: String = "SELECT * FROM trips WHERE ownerId = '\(String(describing: CurrentUser.user.email))';"
+        let query: String = "SELECT * FROM trip WHERE ownerId = '\(String(describing: CurrentUser.user.email!))';"
         return readTrips(query: query)
     }
     
     public func readFavoriteTrips() -> [Trip] {
-        let query: String = "SELECT t.id, t.ownerId, t.name, t.photo, t.destinationName, t.destinationCoords, t.cost, t.rating, t.description FROM trips t JOIN favorites f ON t.id = f.tripId WHERE f.ownerId = '\(String(describing: CurrentUser.user.email))';"
+        let query: String = "SELECT t.id, t.ownerId, t.name, t.photo, t.destinationName, t.destinationCoords, t.cost, t.rating, t.description FROM trip t JOIN favorites f ON t.id = f.tripId WHERE f.ownerId = '\(String(describing: CurrentUser.user.email!))';"
         return readTrips(query: query)
     }
     
@@ -97,7 +108,7 @@ public class Repository {
             db = openDB()
         }
         
-        let deleteStatementString = "DELETE FROM trips WHERE id = \(String(describing: tripId));"
+        let deleteStatementString = "DELETE FROM trip WHERE id = \(String(describing: tripId));"
         var deleteStatement:OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
@@ -120,15 +131,15 @@ public class Repository {
         
         if (sqlite3_prepare_v2(db, query, -1, &queryStatement, nil) == SQLITE_OK) {
             while sqlite3_step(queryStatement) == SQLITE_ROW {
-                let id = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
-                let ownerId = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
-                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
-                let photo = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
-                let destinationName = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
-                let destinationCoords = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
-                let cost = sqlite3_column_double(queryStatement, 7)
-                let rating = sqlite3_column_int(queryStatement, 8)
-                let description = String(describing: String(cString: sqlite3_column_text(queryStatement, 9)))
+                let id = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
+                let ownerId = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let photo = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let destinationName = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+                let destinationCoords = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
+                let cost = sqlite3_column_double(queryStatement, 6)
+                let rating = sqlite3_column_int(queryStatement, 7)
+                let description = String(describing: String(cString: sqlite3_column_text(queryStatement, 8)))
                 
                 trips.append(Trip(id: id, ownerId: ownerId, name: name, photo: photo, destinationName: destinationName, destinationCoords: destinationCoords, cost: cost, rating: rating, description: description))
             }

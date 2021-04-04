@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
+    var myTrips: [Trip]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,10 @@ class HomeViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        // Get the trips from local db
+        let repo = Repository()
+        myTrips = repo.readMyTrips()
     }
 }
 
@@ -27,13 +32,14 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // called when tapping cell
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("pressed: \(indexPath)")
+        print("pressed: \(indexPath.item)")
+        //print("trip: \(myTrips[indexPath.item])")
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 200
+        return myTrips!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
