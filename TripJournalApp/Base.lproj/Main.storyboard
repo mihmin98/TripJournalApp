@@ -133,6 +133,21 @@
             </objects>
             <point key="canvasLocation" x="3351" y="94"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9Zd-yb-YXb">
+            <objects>
+                <viewController id="f81-f2-16o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pd-jL-q9g" customClass="MyTrips">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="je5-er-4ee"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9F-fz-mc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1835" y="-567"/>
+        </scene>
         <!--My Trips-->
         <scene sceneID="enT-dT-Dvo">
             <objects>
@@ -253,6 +268,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGn-2b-jch">
+                                <rect key="frame" x="0.0" y="26" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Your trip" id="HzA-Gt-aVg">
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="oM1-XH-h9h"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d8X-fm-e2u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -280,7 +304,11 @@
                             <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="veu-9a-CLT"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editAction" destination="oM1-XH-h9h" id="nr9-L5-8bw"/>
+                        <outlet property="editButton" destination="oM1-XH-h9h" id="nkA-X9-G5P"/>
                         <outlet property="tripCost" destination="eFt-HY-d8j" id="wYC-os-XUv"/>
                         <outlet property="tripDescription" destination="RFh-2M-GOc" id="YgJ-b6-SUI"/>
                         <outlet property="tripLocation" destination="lay-ST-HDR" id="NBp-TJ-fPp"/>
