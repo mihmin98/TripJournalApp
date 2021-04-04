@@ -18,20 +18,13 @@ class TripViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
+        let trip = Trip(id: "id", ownerId: "ownerId", name: "name", photo: "photo", destinationName: "destinationName", destinationCoords: "destinationCoords", cost: 145.16, rating: 5, description: "description", likedBy: [])
+//        self.tripPhoto. = trip.photo  TODO
         
-        // Do any additional setup after loading the view.
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        self.tripName.text = "Name: \(String(describing: trip.name))"
+        self.tripLocation.text = "Location: \(String(describing: trip.destinationName))"
+        self.tripCost.text = "Cost: \(String(describing: trip.cost))"
+        self.tripRating.text = "Rating: \(String(describing: trip.rating)) / 5"
+        self.tripDescription.text = "Description: \(String(describing: trip.description))"
 }
