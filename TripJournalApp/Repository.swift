@@ -83,12 +83,12 @@ public class Repository {
     }
     
     public func readMyTrips() -> [Trip] {
-        let query: String = "SELECT * FROM trips WHERE ownerId = 'ceva';"
+        let query: String = "SELECT * FROM trips WHERE ownerId = '\(String(describing: CurrentUser.user.email))';"
         return readTrips(query: query)
     }
     
     public func readFavoriteTrips() -> [Trip] {
-        let query: String = "SELECT t.id, t.ownerId, t.name, t.photo, t.destinationName, t.destinationCoords, t.cost, t.rating, t.description FROM trips t JOIN favorites f ON t.id = f.tripId WHERE f.ownerId = 'ceva';"
+        let query: String = "SELECT t.id, t.ownerId, t.name, t.photo, t.destinationName, t.destinationCoords, t.cost, t.rating, t.description FROM trips t JOIN favorites f ON t.id = f.tripId WHERE f.ownerId = '\(String(describing: CurrentUser.user.email))';"
         return readTrips(query: query)
     }
     
