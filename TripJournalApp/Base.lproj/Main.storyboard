@@ -115,13 +115,35 @@
                         <outlet property="email" destination="vGT-tN-6LO" id="Ice-hK-84F"/>
                         <outlet property="password" destination="wO6-Ia-yCE" id="PjT-vY-T2H"/>
                         <outlet property="username" destination="0XY-YG-xJz" id="Rum-qW-MqD"/>
-                        <segue destination="FjJ-Cq-gC1" kind="unwind" identifier="unwindFromRegisterToLogin" unwindAction="unwind:" id="6X9-7E-P35"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6H-a6-cnw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="FjJ-Cq-gC1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2363.768115942029" y="510.9375"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="3CC-Vm-WUv">
+            <objects>
+                <viewController storyboardIdentifier="home" title="Home" id="11k-t8-EKp" customClass="HomeViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qqQ-kC-zIw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="main screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyS-tF-dbN">
+                                <rect key="frame" x="186" y="300" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iA4-gR-YcB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2R-so-LLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2380" y="-224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4b-GU-wEa">

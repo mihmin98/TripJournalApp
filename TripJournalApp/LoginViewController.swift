@@ -74,6 +74,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             CurrentUser.user.copy(user: returnedUser)
         }
         
-        // TODO: Go to main scene
+        // Go to home screen
+        let homeViewController = storyboard?.instantiateViewController(identifier: "home")
+        homeViewController?.modalPresentationStyle = .fullScreen
+        homeViewController?.modalTransitionStyle = .crossDissolve
+        present(homeViewController!, animated: true, completion: nil)
     }
 }

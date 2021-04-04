@@ -36,8 +36,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         registerAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         }))
         createdUserAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            // Go back to login screen
+            let loginViewController = self.storyboard?.instantiateViewController(identifier: "login")
+            loginViewController?.modalPresentationStyle = .fullScreen
+            loginViewController?.modalTransitionStyle = .crossDissolve
+            self.present(loginViewController!, animated: true, completion: nil)
         }))
-
     }
     
     //MARK: UITextFieldDelegate
@@ -46,10 +50,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         // Hide the keyboard
         textField.resignFirstResponder()
         return true
-    }
-    
-    @IBAction func unwind( _ seg: UIStoryboardSegue) {
-        print("cacat")
     }
 
     
@@ -85,9 +85,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             }
             
             createdUser = response.value!
-            //self.present(self.createdUserAlert, animated: true, completion: nil)
+            self.present(self.createdUserAlert, animated: true, completion: nil)
         }
-        
-        performSegue(withIdentifier: "unwindFromRegisterToLogin", sender: nil)
     }
 }
