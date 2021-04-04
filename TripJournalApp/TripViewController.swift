@@ -16,10 +16,8 @@ class TripViewController: UIViewController {
     @IBOutlet weak var tripRating: UILabel!
     @IBOutlet weak var tripDescription: UILabel!
     
-    @IBOutlet weak var editButton: UIBarButtonItem!
-    
     var trip:Trip?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -31,5 +29,14 @@ class TripViewController: UIViewController {
         self.tripCost.text = "Cost: \(String(describing: trip?.cost))"
         self.tripRating.text = "Rating: \(String(describing: trip?.rating)) / 5"
         self.tripDescription.text = "Description: \(String(describing: trip?.description))"
-}
+    }
+ 
+//    @IBAction func editAction(_ sender: Any) {
+//        let viewController = (self.storyboard?.instantiateViewController(identifier: "addTrip"))! as TripAddViewController
+//        viewController.trip = trip
+//        viewController.modalPresentationStyle = .fullScreen
+//        viewController.modalTransitionStyle = .crossDissolve
+//        self.present(viewController, animated: true, completion: nil)
+//
+//    }
 }
