@@ -45,7 +45,7 @@ public class Repository {
             db = openDB()
         }
         
-        let insertStatementString = "insert into trip (id, ownerId, name, photo, destinationName, destinationCoords, cost, rating, description) values (?,?,?,?,?,?,?,?,?,);"
+        let insertStatementString = "insert into trip (id, ownerId, name, photo, destinationName, destinationCoords, cost, rating, description) values (?,?,?,?,?,?,?,?,?);"
         var insertStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
             sqlite3_bind_text(insertStatement, 1, trip.id, -1, nil)
@@ -63,6 +63,22 @@ public class Repository {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting: \(errmsg)")
         }
+        closeDbConnection()
+    }
+    
+    public func update(trip: Trip) {
+        if (db == nil) {
+            db = openDB()
+        }
+        
+        let updateStatementString = "UPDATE trips SET ownerId = ?, name = ?, photo = ?, destinationName = ?, destinationCoords = ?, cost = ?, rating = ?, description = ?;"
+        var updateStatement: OpaquePointer? = nil;
+        if sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK {
+            if sqlite3_step(updateStatement) != SQLITE_DONE {
+                print("Could not update row")
+            }
+        }
+        sqlite3_finalize(updateStatement)
         closeDbConnection()
     }
     
@@ -92,7 +108,6 @@ public class Repository {
         }
         sqlite3_finalize(deleteStatement)
         closeDbConnection()
-        
     }
     
     private func readTrips(query: String) -> [Trip] {
