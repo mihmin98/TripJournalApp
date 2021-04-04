@@ -133,15 +133,103 @@
             </objects>
             <point key="canvasLocation" x="3351" y="94"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Trip View Controller-->
         <scene sceneID="9Zd-yb-YXb">
             <objects>
-                <viewController id="f81-f2-16o" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1pd-jL-q9g" customClass="MyTrips">
+                <viewController storyboardIdentifier="favoriteTrip" id="f81-f2-16o" customClass="FavoriteTripViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="1pd-jL-q9g" userLabel="FavoriteTrip" customClass="FavoriteTripViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-HV-f7q">
+                                <rect key="frame" x="0.0" y="32" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="0Ve-N9-Pfg"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Trip" id="dmY-96-1CR"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-c9-vq2">
+                                <rect key="frame" x="16" y="76" width="392" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="ZpL-RI-N2h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U78-Vo-lx4" userLabel="Name">
+                                <rect key="frame" x="16" y="339" width="392" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripName">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtl-4v-UQ7">
+                                <rect key="frame" x="16" y="389" width="392" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ9-5A-G7Y">
+                                <rect key="frame" x="16" y="438" width="392" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-Tf-KLX">
+                                <rect key="frame" x="16" y="546" width="392" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpm-rR-ome">
+                                <rect key="frame" x="16" y="487" width="392" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="je5-er-4ee"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="favoriteTrip" label="FavoriteTrip"/>
+                        <constraints>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="trailing" secondItem="QrI-Tf-KLX" secondAttribute="trailing" constant="16" id="1W7-dv-c1K"/>
+                            <constraint firstItem="QrI-Tf-KLX" firstAttribute="top" secondItem="Jpm-rR-ome" secondAttribute="bottom" constant="32" id="2y7-22-UO5"/>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="trailing" secondItem="U78-Vo-lx4" secondAttribute="trailing" constant="16" id="3YT-LI-V39"/>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="trailing" secondItem="gtl-4v-UQ7" secondAttribute="trailing" constant="16" id="41M-SH-pvt"/>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="bottom" secondItem="oxA-c9-vq2" secondAttribute="bottom" constant="571" id="5mp-Zz-mcJ"/>
+                            <constraint firstItem="gtl-4v-UQ7" firstAttribute="leading" secondItem="je5-er-4ee" secondAttribute="leading" constant="16" id="9vs-Jg-WcO"/>
+                            <constraint firstItem="QrI-Tf-KLX" firstAttribute="leading" secondItem="je5-er-4ee" secondAttribute="leading" constant="16" id="BVa-Hc-JVx"/>
+                            <constraint firstItem="TQ9-5A-G7Y" firstAttribute="top" secondItem="gtl-4v-UQ7" secondAttribute="bottom" constant="32" id="Eqo-53-zNU"/>
+                            <constraint firstItem="TQ9-5A-G7Y" firstAttribute="leading" secondItem="je5-er-4ee" secondAttribute="leading" constant="16" id="IlW-6z-vIh"/>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="trailing" secondItem="Jpm-rR-ome" secondAttribute="trailing" constant="16" id="Jjt-NI-o7k"/>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="trailing" secondItem="QrI-Tf-KLX" secondAttribute="trailing" constant="16" id="M5Q-8g-Pj0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E5r-HV-f7q" secondAttribute="trailing" constant="-25" id="R35-uR-NOl"/>
+                            <constraint firstItem="oxA-c9-vq2" firstAttribute="centerX" secondItem="1pd-jL-q9g" secondAttribute="centerX" id="SEI-Hf-PKJ"/>
+                            <constraint firstItem="E5r-HV-f7q" firstAttribute="leading" secondItem="1pd-jL-q9g" secondAttribute="leadingMargin" constant="-15" id="UaD-7e-hpl"/>
+                            <constraint firstItem="oxA-c9-vq2" firstAttribute="centerX" secondItem="E5r-HV-f7q" secondAttribute="centerX" id="X06-ma-bZ3"/>
+                            <constraint firstItem="oxA-c9-vq2" firstAttribute="leading" secondItem="je5-er-4ee" secondAttribute="leading" constant="16" id="ZBa-YA-JiN"/>
+                            <constraint firstItem="oxA-c9-vq2" firstAttribute="top" secondItem="E5r-HV-f7q" secondAttribute="bottom" id="aYd-CV-lCi"/>
+                            <constraint firstItem="Jpm-rR-ome" firstAttribute="leading" secondItem="je5-er-4ee" secondAttribute="leading" constant="16" id="agB-62-v6r"/>
+                            <constraint firstItem="je5-er-4ee" firstAttribute="trailing" secondItem="TQ9-5A-G7Y" secondAttribute="trailing" constant="16" id="bSj-Cg-XNf"/>
+                            <constraint firstItem="E5r-HV-f7q" firstAttribute="bottom" secondItem="je5-er-4ee" secondAttribute="top" id="dXz-XU-ha4"/>
+                            <constraint firstItem="QrI-Tf-KLX" firstAttribute="top" secondItem="Jpm-rR-ome" secondAttribute="bottom" constant="32" id="dqj-YY-22j"/>
+                            <constraint firstItem="U78-Vo-lx4" firstAttribute="leading" secondItem="oxA-c9-vq2" secondAttribute="leading" id="hSt-cm-t7J"/>
+                            <constraint firstItem="U78-Vo-lx4" firstAttribute="top" secondItem="oxA-c9-vq2" secondAttribute="bottom" constant="32" id="jsv-9E-eWy"/>
+                            <constraint firstItem="U78-Vo-lx4" firstAttribute="top" secondItem="oxA-c9-vq2" secondAttribute="bottom" constant="32" id="m34-Ga-LFa"/>
+                            <constraint firstItem="gtl-4v-UQ7" firstAttribute="top" secondItem="U78-Vo-lx4" secondAttribute="bottom" constant="32" id="sfP-DQ-tOv"/>
+                            <constraint firstItem="U78-Vo-lx4" firstAttribute="leading" secondItem="je5-er-4ee" secondAttribute="leading" constant="16" id="ySa-mE-ZmZ"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="cost" destination="TQ9-5A-G7Y" id="9Ou-n2-41k"/>
+                            <outlet property="description" destination="QrI-Tf-KLX" id="Z0G-bU-k6F"/>
+                            <outlet property="location" destination="gtl-4v-UQ7" id="ZqA-W0-2TL"/>
+                            <outlet property="name" destination="U78-Vo-lx4" id="a8r-72-v0o"/>
+                            <outlet property="photo" destination="oxA-c9-vq2" id="Gru-CX-kDK"/>
+                            <outlet property="rating" destination="Jpm-rR-ome" id="nis-fT-M0u"/>
+                            <outlet property="tripDescription" destination="QrI-Tf-KLX" id="Sdg-RA-hKF"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9F-fz-mc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,7 +361,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Your trip" id="HzA-Gt-aVg">
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="oM1-XH-h9h"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="oM1-XH-h9h">
+                                            <connections>
+                                                <action selector="editAction:" destination="wKL-0f-xh7" id="dfJ-MV-Sb4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -307,6 +399,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editAction" destination="oM1-XH-h9h" id="nr9-L5-8bw"/>
                         <outlet property="tripCost" destination="eFt-HY-d8j" id="wYC-os-XUv"/>
                         <outlet property="tripDescription" destination="RFh-2M-GOc" id="YgJ-b6-SUI"/>
                         <outlet property="tripLocation" destination="lay-ST-HDR" id="NBp-TJ-fPp"/>

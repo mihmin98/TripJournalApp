@@ -32,6 +32,7 @@
 		FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DEB2618BB0900E3AA93 /* Favorites.swift */; };
 		FBC78DF12618BCE300E3AA93 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */; };
 		FBC78E032618C60600E3AA93 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78E022618C60600E3AA93 /* Repository.swift */; };
+		FBEF39C8261A488800767DE5 /* FavoriteTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF39C7261A488800767DE5 /* FavoriteTripViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		FBC78DEB2618BB0900E3AA93 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FBC78E022618C60600E3AA93 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		FBEF39C7261A488800767DE5 /* FavoriteTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */,
 				FBC78E022618C60600E3AA93 /* Repository.swift */,
 				E405E3942618D76C00A73816 /* Constants.swift */,
+				FBEF39C7261A488800767DE5 /* FavoriteTripViewController.swift */,
 			);
 			path = TripJournalApp;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			files = (
 				E405E3902618C26000A73816 /* RegisterViewController.swift in Sources */,
 				E48047722619F96A006BC0C6 /* TripViewCell.swift in Sources */,
+				FBEF39C8261A488800767DE5 /* FavoriteTripViewController.swift in Sources */,
 				E405E38B2618C23F00A73816 /* LoginViewController.swift in Sources */,
 				FBC78DE72618B7E100E3AA93 /* Trip.swift in Sources */,
 				FBC78DE22618AF5C00E3AA93 /* User.swift in Sources */,
