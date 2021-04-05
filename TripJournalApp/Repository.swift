@@ -149,4 +149,45 @@ public class Repository {
         return trips
     }
     
+    public func addFavoriteTrip(userId: String, tripId: String) {
+        if db == nil {
+            db = openDB()
+        }
+
+        let insertStatementString = "insert into favorites (user_id, trip_id) values (?,?);"
+        var insertStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+            let user_id = userId as NSString
+            sqlite3_bind_text(insertStatement, 1, user_id.utf8String, -1, SQLITE_TRANSIENT)
+            let trip_id = tripId as NSString
+            sqlite3_bind_text(insertStatement, 2, trip_id.utf8String, -1, SQLITE_TRANSIENT)
+
+        }
+        if sqlite3_step(insertStatement) != SQLITE_DONE {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("failure inserting: (errmsg)")
+        }
+        sqlite3_finalize(insertStatement)
+        closeDbConnection()
+    }
+
+    public func deleteFavoriteTrip(userId: String, tripId: String) {
+        if db == nil {
+            db = openDB()
+        }
+        
+        let deleteStatementString = "DELETE FROM favorites WHERE user_id = '(String(describing: userId))' AND trip_id = '(String(describing: tripId))';"
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
+            let user_id = userId as NSString
+            sqlite3_bind_text(deleteStatement, 1, user_id.utf8String, -1, SQLITE_TRANSIENT)
+            let trip_id = tripId as NSString
+            sqlite3_bind_text(deleteStatement, 2, trip_id.utf8String, -1, SQLITE_TRANSIENT)
+            if sqlite3_step(deleteStatement) != SQLITE_DONE {
+                print("Could not delete row")
+            }
+        }
+        sqlite3_finalize(deleteStatement)
+        closeDbConnection()
+    }
 }
