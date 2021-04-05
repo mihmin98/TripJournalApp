@@ -139,18 +139,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="a7n-iL-CGQ" kind="relationship" relationship="viewControllers" id="dtQ-aB-xmR"/>
-                        <segue destination="q8o-hw-u87" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
+                        <segue destination="fSY-oy-cKf" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
+                        <segue destination="eLH-1W-dZq" kind="relationship" relationship="viewControllers" id="S2g-pt-MF3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKs-17-m5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3351" y="94"/>
         </scene>
-        <!--Favorite Trip View Controller-->
+        <!--View Other Trip-->
         <scene sceneID="9Zd-yb-YXb">
             <objects>
-                <viewController storyboardIdentifier="favoriteTrip" id="f81-f2-16o" customClass="FavoriteTripViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="1pd-jL-q9g" userLabel="FavoriteTrip" customClass="FavoriteTripViewController">
+                <viewController storyboardIdentifier="favoriteTrip" title="View Other Trip" id="f81-f2-16o" customClass="ViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pd-jL-q9g" userLabel="FavoriteTrip" customClass="FavoriteTripViewController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -247,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9F-fz-mc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="-567"/>
+            <point key="canvasLocation" x="8183" y="477"/>
         </scene>
         <!--My Trips-->
         <scene sceneID="enT-dT-Dvo">
@@ -308,12 +309,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dro-Rm-h2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5408.6956521739139" y="-328.125"/>
+            <point key="canvasLocation" x="5239" y="-328"/>
         </scene>
-        <!--Trip Journal-->
+        <!--View My Trip-->
         <scene sceneID="Ct5-Tk-V1y">
             <objects>
-                <viewController storyboardIdentifier="viewMyTrip" id="wKL-0f-xh7" customClass="TripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewMyTrip" title="View My Trip" id="wKL-0f-xh7" customClass="TripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zSl-jc-8ka">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -424,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xad-DK-W9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6486.9565217391309" y="-328.125"/>
+            <point key="canvasLocation" x="6267" y="-328"/>
         </scene>
         <!--Edit Trip-->
         <scene sceneID="n4Q-t0-egG">
@@ -511,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCK-VL-JuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7490" y="-328"/>
+            <point key="canvasLocation" x="7248" y="-328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4b-GU-wEa">
@@ -531,21 +532,55 @@
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="93.75"/>
         </scene>
-        <!--Item-->
+        <!--Favorite Trips-->
         <scene sceneID="0l5-9F-dpA">
             <objects>
-                <viewController id="q8o-hw-u87" sceneMemberID="viewController">
+                <viewController title="Favorite Trips" id="q8o-hw-u87" customClass="FavoriteTripsViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iEH-Cg-riW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-dc-k7f">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="N18-jM-tqj">
+                                    <size key="itemSize" width="414" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rtz-oL-mdI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Djw-CF-00X">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="gb9-R4-tWi" kind="show" identifier="viewFavoriteTripSegue" id="Jkh-uP-oX2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FaF-Z0-lXH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FaF-Z0-lXH" firstAttribute="bottom" secondItem="JHg-dc-k7f" secondAttribute="bottom" id="Eg6-X0-ONh"/>
+                            <constraint firstItem="JHg-dc-k7f" firstAttribute="leading" secondItem="FaF-Z0-lXH" secondAttribute="leading" id="bDt-X3-ls3"/>
+                            <constraint firstItem="JHg-dc-k7f" firstAttribute="top" secondItem="iEH-Cg-riW" secondAttribute="top" id="euA-EM-da7"/>
+                            <constraint firstItem="JHg-dc-k7f" firstAttribute="trailing" secondItem="FaF-Z0-lXH" secondAttribute="trailing" id="jr5-Ip-sAw"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="V6H-Ze-pNS"/>
+                    <navigationItem key="navigationItem" title="Trip Journal" id="KPw-Ag-ulr"/>
+                    <connections>
+                        <outlet property="collectionView" destination="JHg-dc-k7f" id="SH2-Qn-4wZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdG-zU-v1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4329" y="449"/>
+            <point key="canvasLocation" x="5239.130434782609" y="448.66071428571428"/>
         </scene>
         <!--My Trips-->
         <scene sceneID="giO-ET-h1v">
@@ -566,12 +601,212 @@
             </objects>
             <point key="canvasLocation" x="4329" y="-328"/>
         </scene>
+        <!--Other Trips-->
+        <scene sceneID="1DF-cn-SQD">
+            <objects>
+                <viewController title="Other Trips" id="K4X-2y-Tfk" customClass="OtherTripsViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rpF-mY-X8a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="feK-QD-yfw">
+                                <rect key="frame" x="0.0" y="41" width="414" height="813"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="KiM-sj-ug0">
+                                    <size key="itemSize" width="414" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6TO-Vo-f7S">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p6z-De-2Ya">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="gb9-R4-tWi" kind="show" identifier="viewOtherTripSegue" id="Q3a-Vo-EYd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hNW-TX-8AW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trip Journal" id="igy-UC-ajH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12k-rP-rVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5239.130434782609" y="1212.7232142857142"/>
+        </scene>
+        <!--Favorite Trips-->
+        <scene sceneID="Zxu-f6-ylH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fSY-oy-cKf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite Trips" image="suit.heart" catalog="system" id="V6H-Ze-pNS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmk-g1-U45">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q8o-hw-u87" kind="relationship" relationship="rootViewController" id="UWF-tt-C3h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZh-ZN-FNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.985507246377" y="448.66071428571428"/>
+        </scene>
+        <!--Other Trips-->
+        <scene sceneID="CWJ-rX-UE5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eLH-1W-dZq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Other Trips" image="globe" catalog="system" id="Edl-hB-SB0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vsu-ZH-odL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K4X-2y-Tfk" kind="relationship" relationship="rootViewController" id="9Sy-kN-fda"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKS-Il-P6l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.985507246377" y="1212.7232142857142"/>
+        </scene>
+        <!--View Other Trip-->
+        <scene sceneID="YJa-qk-gWE">
+            <objects>
+                <viewController storyboardIdentifier="viewOtherTrip" title="View Other Trip" id="gb9-R4-tWi" customClass="OtherTripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H1O-Gk-1wp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSI-pZ-Isw">
+                                <rect key="frame" x="16" y="104" width="382" height="215"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripPhoto">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="6Dl-Ur-fxs"/>
+                                    <constraint firstAttribute="width" secondItem="DSI-pZ-Isw" secondAttribute="height" multiplier="16:9" id="PYE-sn-GVM"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-CC-Iyj">
+                                <rect key="frame" x="16" y="351" width="382" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripName">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9M-kl-rcO">
+                                <rect key="frame" x="16" y="403.5" width="382" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tripLocation">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF1-Dz-68y">
+                                <rect key="frame" x="16" y="456.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9g-in-VJE">
+                                <rect key="frame" x="16" y="509.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QK-z4-1G1">
+                                <rect key="frame" x="16" y="562.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mwj-Fa-H6h" customClass="V">
+                                <rect key="frame" x="0.0" y="26" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Your trip" id="GXS-Gn-17g"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kyc-Bm-ezh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NF1-Dz-68y" firstAttribute="top" secondItem="S9M-kl-rcO" secondAttribute="bottom" constant="32" id="2B8-Hn-hdO"/>
+                            <constraint firstItem="B9g-in-VJE" firstAttribute="leading" secondItem="kyc-Bm-ezh" secondAttribute="leading" constant="16" id="4VB-3M-fbb"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="NF1-Dz-68y" secondAttribute="trailing" constant="16" id="5cy-OJ-YWh"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="S9M-kl-rcO" secondAttribute="trailing" constant="16" id="IdA-6O-b5w"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="DSI-pZ-Isw" secondAttribute="trailing" constant="16" id="M02-KH-eGU"/>
+                            <constraint firstItem="B9g-in-VJE" firstAttribute="top" secondItem="NF1-Dz-68y" secondAttribute="bottom" constant="32" id="O4a-Cv-Djv"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="2QK-z4-1G1" secondAttribute="trailing" constant="16" id="OpO-33-SQ8"/>
+                            <constraint firstItem="NF1-Dz-68y" firstAttribute="top" secondItem="S9M-kl-rcO" secondAttribute="bottom" constant="32" id="QtZ-4S-sc9"/>
+                            <constraint firstItem="DSI-pZ-Isw" firstAttribute="leading" secondItem="kyc-Bm-ezh" secondAttribute="leading" constant="16" id="ROf-1l-QSm"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="NF1-Dz-68y" secondAttribute="trailing" constant="16" id="SRg-Bv-Ku1"/>
+                            <constraint firstItem="vQ9-CC-Iyj" firstAttribute="leading" secondItem="kyc-Bm-ezh" secondAttribute="leading" constant="16" id="V9D-tQ-Zy1"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="vQ9-CC-Iyj" secondAttribute="trailing" constant="16" id="XM9-2y-zo2"/>
+                            <constraint firstItem="2QK-z4-1G1" firstAttribute="top" secondItem="B9g-in-VJE" secondAttribute="bottom" constant="32" id="Xoa-0P-kWw"/>
+                            <constraint firstItem="S9M-kl-rcO" firstAttribute="top" secondItem="vQ9-CC-Iyj" secondAttribute="bottom" constant="32" id="ab8-9U-m8H"/>
+                            <constraint firstItem="DSI-pZ-Isw" firstAttribute="top" secondItem="kyc-Bm-ezh" secondAttribute="top" constant="16" id="d5y-TY-BuR"/>
+                            <constraint firstItem="vQ9-CC-Iyj" firstAttribute="top" secondItem="DSI-pZ-Isw" secondAttribute="bottom" constant="32" id="dZl-yV-A8A"/>
+                            <constraint firstItem="kyc-Bm-ezh" firstAttribute="trailing" secondItem="B9g-in-VJE" secondAttribute="trailing" constant="16" id="kGP-d8-CPj"/>
+                            <constraint firstItem="DSI-pZ-Isw" firstAttribute="centerX" secondItem="H1O-Gk-1wp" secondAttribute="centerX" id="sY8-NI-loi"/>
+                            <constraint firstItem="S9M-kl-rcO" firstAttribute="leading" secondItem="kyc-Bm-ezh" secondAttribute="leading" constant="16" id="xLb-VH-6Kc"/>
+                            <constraint firstItem="NF1-Dz-68y" firstAttribute="leading" secondItem="kyc-Bm-ezh" secondAttribute="leading" constant="16" id="zLp-dl-JYy"/>
+                            <constraint firstItem="2QK-z4-1G1" firstAttribute="leading" secondItem="kyc-Bm-ezh" secondAttribute="leading" constant="16" id="zgW-6U-xEe"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Trip Journal" id="FNK-ck-4ie">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="D6I-ul-jyl">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vgz-1h-p4d">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Favorite"/>
+                                <connections>
+                                    <action selector="pressedFavoriteButton:" destination="gb9-R4-tWi" eventType="touchUpInside" id="xaN-Ms-xEC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="Vgz-1h-p4d" id="Thw-vL-fVq"/>
+                        <outlet property="tripCost" destination="NF1-Dz-68y" id="Gi8-ig-bf5"/>
+                        <outlet property="tripDescription" destination="2QK-z4-1G1" id="LSb-gf-ttN"/>
+                        <outlet property="tripLocation" destination="S9M-kl-rcO" id="N1O-MB-Bo5"/>
+                        <outlet property="tripName" destination="vQ9-CC-Iyj" id="TCI-P0-Zxc"/>
+                        <outlet property="tripPhoto" destination="DSI-pZ-Isw" id="oVs-zd-dhe"/>
+                        <outlet property="tripRating" destination="B9g-in-VJE" id="HyP-DM-a8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fe-7V-zUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6267" y="449"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Q3a-Vo-EYd"/>
         <segue reference="pqA-VM-0p2"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="globe" catalog="system" width="128" height="121"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -131,8 +131,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             print("error creating table: \(errmsg)")
         }
         
+        // TODO: make (user_id, trip_id) be unique
         if sqlite3_exec(db, "create table if not exists favorites (id integer primary key autoincrement, " +
-                            "user_id integer, trip_id text)", nil, nil, nil) != SQLITE_OK {
+                            "user_id text, trip_id text)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }

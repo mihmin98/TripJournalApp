@@ -14,6 +14,10 @@
 		E405E3902618C26000A73816 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E38F2618C26000A73816 /* RegisterViewController.swift */; };
 		E405E3952618D76C00A73816 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E3942618D76C00A73816 /* Constants.swift */; };
 		E405E3AD2618E78B00A73816 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405E3AC2618E78B00A73816 /* CurrentUser.swift */; };
+		E46C2A36261B4EAA001DC16B /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A35261B4EAA001DC16B /* EditTripViewController.swift */; };
+		E46C2A3B261B6B3C001DC16B /* FavoriteTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A3A261B6B3C001DC16B /* FavoriteTripsViewController.swift */; };
+		E46C2A43261B75EC001DC16B /* OtherTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A42261B75EC001DC16B /* OtherTripViewController.swift */; };
+		E46C2A48261B9BC5001DC16B /* OtherTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A47261B9BC5001DC16B /* OtherTripsViewController.swift */; };
 		E480476C2619BC38006BC0C6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480476B2619BC38006BC0C6 /* HomeViewController.swift */; };
 		E48047722619F96A006BC0C6 /* TripViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48047702619F96A006BC0C6 /* TripViewCell.swift */; };
 		E48047732619F96A006BC0C6 /* TripViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48047712619F96A006BC0C6 /* TripViewCell.xib */; };
@@ -33,7 +37,6 @@
 		FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DEB2618BB0900E3AA93 /* Favorites.swift */; };
 		FBC78DF12618BCE300E3AA93 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */; };
 		FBC78E032618C60600E3AA93 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78E022618C60600E3AA93 /* Repository.swift */; };
-		FBEF39C8261A488800767DE5 /* FavoriteTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF39C7261A488800767DE5 /* FavoriteTripViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,10 @@
 		E405E38F2618C26000A73816 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E405E3942618D76C00A73816 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E405E3AC2618E78B00A73816 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		E46C2A35261B4EAA001DC16B /* EditTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
+		E46C2A3A261B6B3C001DC16B /* FavoriteTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTripsViewController.swift; sourceTree = "<group>"; };
+		E46C2A42261B75EC001DC16B /* OtherTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTripViewController.swift; sourceTree = "<group>"; };
+		E46C2A47261B9BC5001DC16B /* OtherTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTripsViewController.swift; sourceTree = "<group>"; };
 		E480476B2619BC38006BC0C6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E48047702619F96A006BC0C6 /* TripViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewCell.swift; sourceTree = "<group>"; };
 		E48047712619F96A006BC0C6 /* TripViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripViewCell.xib; sourceTree = "<group>"; };
@@ -92,7 +99,6 @@
 		FBC78DEB2618BB0900E3AA93 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FBC78E022618C60600E3AA93 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		FBEF39C7261A488800767DE5 /* FavoriteTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,10 @@
 				E4C7084D26187BD300D4AFED /* SceneDelegate.swift */,
 				E4C7084F26187BD300D4AFED /* ViewController.swift */,
 				E4C7085126187BD300D4AFED /* Main.storyboard */,
+				E46C2A47261B9BC5001DC16B /* OtherTripsViewController.swift */,
+				E46C2A3A261B6B3C001DC16B /* FavoriteTripsViewController.swift */,
+				E46C2A42261B75EC001DC16B /* OtherTripViewController.swift */,
+				E46C2A35261B4EAA001DC16B /* EditTripViewController.swift */,
 				E480476B2619BC38006BC0C6 /* HomeViewController.swift */,
 				E48047702619F96A006BC0C6 /* TripViewCell.swift */,
 				E48047712619F96A006BC0C6 /* TripViewCell.xib */,
@@ -183,7 +193,6 @@
 				FBC78DF02618BCE300E3AA93 /* LoginRequest.swift */,
 				FBC78E022618C60600E3AA93 /* Repository.swift */,
 				E405E3942618D76C00A73816 /* Constants.swift */,
-				FBEF39C7261A488800767DE5 /* FavoriteTripViewController.swift */,
 			);
 			path = TripJournalApp;
 			sourceTree = "<group>";
@@ -459,14 +468,16 @@
 				FB3D9C9A261B6F720014945D /* EditTripViewController.swift in Sources */,
 				E405E3902618C26000A73816 /* RegisterViewController.swift in Sources */,
 				E48047722619F96A006BC0C6 /* TripViewCell.swift in Sources */,
-				FBEF39C8261A488800767DE5 /* FavoriteTripViewController.swift in Sources */,
+				E46C2A48261B9BC5001DC16B /* OtherTripsViewController.swift in Sources */,
 				E405E38B2618C23F00A73816 /* LoginViewController.swift in Sources */,
 				FBC78DE72618B7E100E3AA93 /* Trip.swift in Sources */,
 				FBC78DE22618AF5C00E3AA93 /* User.swift in Sources */,
 				E4C7085026187BD300D4AFED /* ViewController.swift in Sources */,
 				E405E3952618D76C00A73816 /* Constants.swift in Sources */,
+				E46C2A43261B75EC001DC16B /* OtherTripViewController.swift in Sources */,
 				FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */,
 				E4C7084C26187BD300D4AFED /* AppDelegate.swift in Sources */,
+				E46C2A3B261B6B3C001DC16B /* FavoriteTripsViewController.swift in Sources */,
 				FBC78E032618C60600E3AA93 /* Repository.swift in Sources */,
 				FBC0DC43261A0D00004EEF52 /* TripViewController.swift in Sources */,
 				FBC78DF12618BCE300E3AA93 /* LoginRequest.swift in Sources */,

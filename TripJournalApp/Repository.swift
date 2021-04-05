@@ -176,7 +176,7 @@ public class Repository {
             db = openDB()
         }
         
-        let deleteStatementString = "DELETE FROM favorites WHERE user_id = '(String(describing: userId))' AND trip_id = '(String(describing: tripId))';"
+        let deleteStatementString = "DELETE FROM favorites WHERE user_id = '\(String(describing: userId))' AND trip_id = '\(String(describing: tripId))';"
         var deleteStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
             let user_id = userId as NSString
