@@ -51,14 +51,26 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     emptyCost.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
     emptyRating.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
     emptyDescription.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
+    createdTripAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//        let homeViewController = self.storyboard?.instantiateViewController(identifier: "myTrips")
+//        homeViewController?.modalPresentationStyle = .fullScreen
+//        homeViewController?.modalTransitionStyle = .crossDissolve
+//        self.present(homeViewController!, animated: true, completion: nil)
+    }))
 
 
     if trip == nil {
-    self.navigationItem.title = "Add Trip"
-    // Create a blank trip and set the ui fields etc
+        self.navigationItem.title = "Add Trip"
+        // Create a blank trip and set the ui fields etc
     } else {
-    self.navigationItem.title = "Edit Trip"
-    // Set the ui fields
+        self.navigationItem.title = "Edit Trip"
+        // Set the ui fields
+        tripName.text = trip?.name
+        tripLocation.text = trip?.destinationCoords
+        tripDestination.text = trip?.destinationName
+        tripCost.text = String(trip!.cost)
+        tripRating.text = String(trip!.rating)
+        tripDescription.text = trip?.description
     }
 
     // Do any additional setup after loading the view.
@@ -73,8 +85,8 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func saveTrip(_ sender: Any) {
     if trip == nil {
-    //add
-       addNewTrip()
+        //add
+        addNewTrip()
         return
     }
         //edit
@@ -82,7 +94,7 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     }
 
     func addNewTrip() {
-        let newTrip = Trip(ownerId: CurrentUser.user.email!, name: tripName.text!, destinationName: tripDestination.text!, cost: Double(tripCost.text!)!, rating: Int32(tripRating.text!)!, description: tripDescription.text!, likedBy: [CurrentUser.user.email!])
+        let newTrip = Trip(ownerId: CurrentUser.user.email!, name: tripName.text!, photo: "", destinationName: tripDestination.text!, destinationCoords: tripLocation.text!, cost: Double(tripCost.text!)!, rating: Int32(tripRating.text!)!, description: tripDescription.text!, likedBy: [CurrentUser.user.email!])
     
 
     let request = AF.request("\(Constants.API_URL)/trip",
@@ -105,8 +117,10 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     }
     
     func editTrip(trip: Trip) {
+        
+        print(trip)
         let request = AF.request("\(Constants.API_URL)/trip",
-                                 method: .post, parameters: trip, encoder: JSONParameterEncoder.default).validate()
+                                 method: .put, parameters: trip, encoder: JSONParameterEncoder.default).validate()
 
         request.responseDecodable(of: Trip.self) { response in
             guard response.error == nil else {
@@ -119,7 +133,6 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
             let repository = Repository()
             
             repository.update(trip: trip)
-            
         }
     }
 }

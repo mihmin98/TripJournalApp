@@ -23,8 +23,19 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         
         // Get the trips from local db
+//        let repo = Repository()
+//        myTrips = repo.readMyTrips()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Get favorite trips from local db
+        // TODO Fix this
         let repo = Repository()
         myTrips = repo.readMyTrips()
+        
+        collectionView.reloadData()
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.layoutSubviews()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
