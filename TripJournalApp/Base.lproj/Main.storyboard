@@ -138,7 +138,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="VnY-Ro-04Y" kind="relationship" relationship="viewControllers" id="dtQ-aB-xmR"/>
+                        <segue destination="a7n-iL-CGQ" kind="relationship" relationship="viewControllers" id="dtQ-aB-xmR"/>
                         <segue destination="q8o-hw-u87" kind="relationship" relationship="viewControllers" id="d2k-u1-0U6"/>
                     </connections>
                 </tabBarController>
@@ -274,47 +274,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="wKL-0f-xh7" kind="show" identifier="viewMyTripSegue" id="3dj-fN-PTn"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWX-Zo-okj">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Trip Journal" id="Qbj-aY-DcF">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="2TF-aH-E1d">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4R9-Sk-sYP">
-                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Add Trip"/>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgD-zx-8wW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PRt-sz-VRj" firstAttribute="top" secondItem="nWX-Zo-okj" secondAttribute="bottom" id="0M4-z1-ohn"/>
                             <constraint firstItem="hgD-zx-8wW" firstAttribute="bottom" secondItem="PRt-sz-VRj" secondAttribute="bottom" id="Erk-We-x3B"/>
                             <constraint firstItem="PRt-sz-VRj" firstAttribute="leading" secondItem="hgD-zx-8wW" secondAttribute="leading" id="IqL-hO-Z9v"/>
-                            <constraint firstItem="nWX-Zo-okj" firstAttribute="top" secondItem="hgD-zx-8wW" secondAttribute="top" id="ML5-jc-Qfj"/>
-                            <constraint firstItem="nWX-Zo-okj" firstAttribute="top" secondItem="hgD-zx-8wW" secondAttribute="top" id="URV-VP-6ae"/>
-                            <constraint firstItem="hgD-zx-8wW" firstAttribute="trailing" secondItem="nWX-Zo-okj" secondAttribute="trailing" id="Uce-xZ-5QH"/>
-                            <constraint firstItem="nWX-Zo-okj" firstAttribute="leading" secondItem="hgD-zx-8wW" secondAttribute="leading" id="c5g-iM-1Hi"/>
+                            <constraint firstItem="PRt-sz-VRj" firstAttribute="top" secondItem="hgD-zx-8wW" secondAttribute="top" id="dbL-Br-XUB"/>
                             <constraint firstItem="hgD-zx-8wW" firstAttribute="trailing" secondItem="PRt-sz-VRj" secondAttribute="trailing" id="ozd-au-IIu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Trips" image="paperplane" catalog="system" id="fEN-4B-BEI"/>
+                    <navigationItem key="navigationItem" title="Trip Journal" id="XUD-NE-VWD">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="2TF-aH-E1d">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4R9-Sk-sYP">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Trip"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="PRt-sz-VRj" id="Wzl-ht-mfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dro-Rm-h2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4498.5507246376819" y="-328.125"/>
+            <point key="canvasLocation" x="5408.6956521739139" y="-328.125"/>
         </scene>
-        <!--Trip View Controller-->
+        <!--Trip Journal-->
         <scene sceneID="Ct5-Tk-V1y">
             <objects>
                 <viewController storyboardIdentifier="viewMyTrip" id="wKL-0f-xh7" customClass="TripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ngR-xo-Ot1">
-                                <rect key="frame" x="16" y="60" width="382" height="215"/>
+                                <rect key="frame" x="16" y="104" width="382" height="215"/>
                                 <accessibility key="accessibilityConfiguration" identifier="tripPhoto">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -334,7 +327,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fT-gh-HlC">
-                                <rect key="frame" x="16" y="307" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="351" width="382" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="tripName">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -343,7 +336,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lay-ST-HDR">
-                                <rect key="frame" x="16" y="359.5" width="382" height="21"/>
+                                <rect key="frame" x="16" y="403.5" width="382" height="21"/>
                                 <accessibility key="accessibilityConfiguration" identifier="tripLocation">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -352,19 +345,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFt-HY-d8j">
-                                <rect key="frame" x="16" y="412.5" width="382" height="21"/>
+                                <rect key="frame" x="16" y="456.5" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-2e-dM7">
-                                <rect key="frame" x="16" y="465.5" width="382" height="21"/>
+                                <rect key="frame" x="16" y="509.5" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFh-2M-GOc">
-                                <rect key="frame" x="16" y="518.5" width="382" height="21"/>
+                                <rect key="frame" x="16" y="562.5" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -373,13 +366,7 @@
                                 <rect key="frame" x="0.0" y="26" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Your trip" id="HzA-Gt-aVg">
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="oM1-XH-h9h">
-                                            <connections>
-                                                <action selector="editAction:" destination="wKL-0f-xh7" id="dfJ-MV-Sb4"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Your trip" id="HzA-Gt-aVg"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -410,9 +397,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Trip Journal" id="7F1-kx-3BY"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editAction" destination="oM1-XH-h9h" id="nr9-L5-8bw"/>
                         <outlet property="tripCost" destination="eFt-HY-d8j" id="wYC-os-XUv"/>
                         <outlet property="tripDescription" destination="RFh-2M-GOc" id="YgJ-b6-SUI"/>
                         <outlet property="tripLocation" destination="lay-ST-HDR" id="NBp-TJ-fPp"/>
@@ -423,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xad-DK-W9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5577" y="-328"/>
+            <point key="canvasLocation" x="6486.9565217391309" y="-328.125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4b-GU-wEa">
@@ -458,6 +445,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdG-zU-v1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4329" y="449"/>
+        </scene>
+        <!--My Trips-->
+        <scene sceneID="giO-ET-h1v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a7n-iL-CGQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Trips" image="paperplane" catalog="system" id="fEN-4B-BEI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MSk-5L-7Yi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VnY-Ro-04Y" kind="relationship" relationship="rootViewController" id="Xjk-dI-JYp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dP4-jY-Lz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4329" y="-328"/>
         </scene>
     </scenes>
     <resources>

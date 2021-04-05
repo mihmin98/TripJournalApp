@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     var myTrips: [Trip]?
+    var selectedTrip: Trip?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,28 +29,35 @@ class HomeViewController: UIViewController {
     }
 }
 
-
 extension HomeViewController: UICollectionViewDelegate {
+    // Called when tapping cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // called when tapping cell
         collectionView.deselectItem(at: indexPath, animated: true)
         print("pressed: \(indexPath.item)")
         
+        selectedTrip = myTrips![indexPath.item]
+        
         // Segue to another scene
-        let viewController = (self.storyboard?.instantiateViewController(identifier: "viewMyTrip"))! as TripViewController
-        viewController.trip = myTrips![indexPath.item]
-        viewController.modalPresentationStyle = .fullScreen
-        viewController.modalTransitionStyle = .crossDissolve
-        self.present(viewController, animated: true, completion: nil)
-        //self.present(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
+        performSegue(withIdentifier: "viewMyTripSegue", sender: self)
+    }
+    
+    // Prepare data for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewMyTripSegue" {
+            if let destinationViewController = segue.destination as? TripViewController {
+                destinationViewController.trip = selectedTrip
+            }
+        }
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
+    // Sets the number of cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myTrips!.count
     }
     
+    // Sets cell data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripViewCell.identifier, for: indexPath) as! TripViewCell
         

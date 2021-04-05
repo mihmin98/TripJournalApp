@@ -16,22 +16,22 @@ class TripViewController: UIViewController {
     @IBOutlet weak var tripRating: UILabel!
     @IBOutlet weak var tripDescription: UILabel!
     
-    var trip:Trip?
+    var trip: Trip?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addLeftBarMenuButtonEnabled = true
+        //self.addLeftBarMenuButtonEnabled = true
                 
         if trip == nil {
             trip = Trip(cost: 0, rating: 0)
         }
         
-        self.tripName.text = "Name: \(String(describing: trip?.name))"
-        self.tripLocation.text = "Location: \(String(describing: trip?.destinationName))"
-        self.tripCost.text = "Cost: \(String(describing: trip?.cost))"
-        self.tripRating.text = "Rating: \(String(describing: trip?.rating)) / 5"
-        self.tripDescription.text = "Description: \(String(describing: trip?.description))"
+        self.tripName.text = "Name: \(String(describing: trip!.name!))"
+        self.tripLocation.text = "Location: \(String(describing: trip!.destinationName!))"
+        self.tripCost.text = "Cost: \(String(describing: trip!.cost))"
+        self.tripRating.text = "Rating: \(String(describing: trip!.rating)) / 5"
+        self.tripDescription.text = "Description: \(String(describing: trip!.description!))"
     }
  
 //    @IBAction func editAction(_ sender: Any) {

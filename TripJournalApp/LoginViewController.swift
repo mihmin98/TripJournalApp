@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        // Chekc if password is empty
+        // Check if password is empty
         if (password.text?.count == 0 || password.text == nil) {
             self.present(emptyPasswordAlert, animated: true, completion: nil)
             return
