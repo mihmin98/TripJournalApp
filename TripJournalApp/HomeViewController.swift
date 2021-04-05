@@ -25,7 +25,24 @@ class HomeViewController: UIViewController {
         // Get the trips from local db
         let repo = Repository()
         myTrips = repo.readMyTrips()
+    }
+    
+    @IBAction func addTripButtonPressed(_ sender: Any) {
+        //performSegue(withIdentifier: "addTripSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewMyTripSegue" {
+            if let destinationViewController = segue.destination as? TripViewController {
+                destinationViewController.trip = selectedTrip
+            }
+        }
         
+        else if segue.identifier == "addTripSegue" {
+            if let destinationViewController = segue.destination as? EditTripViewController {
+                destinationViewController.trip = nil
+            }
+        }
     }
 }
 
@@ -42,13 +59,9 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     // Prepare data for segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "viewMyTripSegue" {
-            if let destinationViewController = segue.destination as? TripViewController {
-                destinationViewController.trip = selectedTrip
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {

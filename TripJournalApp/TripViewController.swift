@@ -21,8 +21,6 @@ class TripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.addLeftBarMenuButtonEnabled = true
-                
         if trip == nil {
             trip = Trip(cost: 0, rating: 0)
         }
@@ -33,13 +31,12 @@ class TripViewController: UIViewController {
         self.tripRating.text = "Rating: \(String(describing: trip!.rating)) / 5"
         self.tripDescription.text = "Description: \(String(describing: trip!.description!))"
     }
- 
-//    @IBAction func editAction(_ sender: Any) {
-//        let viewController = (self.storyboard?.instantiateViewController(identifier: "addTrip"))! as TripAddViewController
-//        viewController.trip = trip
-//        viewController.modalPresentationStyle = .fullScreen
-//        viewController.modalTransitionStyle = .crossDissolve
-//        self.present(viewController, animated: true, completion: nil)
-//
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editMyTripSegue" {
+            if let destinationViewController = segue.destination as? EditTripViewController {
+                destinationViewController.trip = trip
+            }
+        }
+    }
 }

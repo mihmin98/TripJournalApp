@@ -296,6 +296,9 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Trip"/>
+                                <connections>
+                                    <segue destination="8fh-r6-02p" kind="show" identifier="addTripSegue" id="pa1-6u-cYy"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -397,7 +400,18 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Trip Journal" id="7F1-kx-3BY"/>
+                    <navigationItem key="navigationItem" title="Trip Journal" id="7F1-kx-3BY">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="P4W-Xk-hLo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Qlq-Wg-P4s">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <segue destination="8fh-r6-02p" kind="show" identifier="editMyTripSegue" id="pqA-VM-0p2"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tripCost" destination="eFt-HY-d8j" id="wYC-os-XUv"/>
@@ -411,6 +425,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xad-DK-W9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6486.9565217391309" y="-328.125"/>
+        </scene>
+        <!--Edit Trip-->
+        <scene sceneID="n4Q-t0-egG">
+            <objects>
+                <viewController title="Edit Trip" id="8fh-r6-02p" customClass="EditTripViewController" customModule="TripJournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsY-CM-XLs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xFB-ZV-HxO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="M32-Eo-pyP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCK-VL-JuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7490" y="-328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4b-GU-wEa">
@@ -466,6 +496,9 @@
             <point key="canvasLocation" x="4329" y="-328"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pqA-VM-0p2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
