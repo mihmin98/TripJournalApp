@@ -26,6 +26,7 @@
 		E4C7086326187BD400D4AFED /* TripJournalAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7086226187BD400D4AFED /* TripJournalAppTests.swift */; };
 		E4C7086E26187BD500D4AFED /* TripJournalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7086D26187BD500D4AFED /* TripJournalAppUITests.swift */; };
 		E4C708852618814C00D4AFED /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C708842618814C00D4AFED /* Register.storyboard */; };
+		FB3D9C9A261B6F720014945D /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3D9C99261B6F720014945D /* EditTripViewController.swift */; };
 		FBC0DC43261A0D00004EEF52 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0DC42261A0D00004EEF52 /* TripViewController.swift */; };
 		FBC78DE22618AF5C00E3AA93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DE12618AF5C00E3AA93 /* User.swift */; };
 		FBC78DE72618B7E100E3AA93 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC78DE62618B7E100E3AA93 /* Trip.swift */; };
@@ -84,6 +85,7 @@
 		E4C7086F26187BD500D4AFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C708842618814C00D4AFED /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		F9190F12189C6E96C4656D76 /* Pods-TripJournalAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripJournalAppTests.release.xcconfig"; path = "Target Support Files/Pods-TripJournalAppTests/Pods-TripJournalAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB3D9C99261B6F720014945D /* EditTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
 		FBC0DC42261A0D00004EEF52 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		FBC78DE12618AF5C00E3AA93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBC78DE62618B7E100E3AA93 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		E4C7084A26187BD300D4AFED /* TripJournalApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB3D9C99261B6F720014945D /* EditTripViewController.swift */,
 				FBC0DC42261A0D00004EEF52 /* TripViewController.swift */,
 				E4C7084B26187BD300D4AFED /* AppDelegate.swift */,
 				E405E38A2618C23F00A73816 /* LoginViewController.swift */,
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3D9C9A261B6F720014945D /* EditTripViewController.swift in Sources */,
 				E405E3902618C26000A73816 /* RegisterViewController.swift in Sources */,
 				E48047722619F96A006BC0C6 /* TripViewCell.swift in Sources */,
 				FBEF39C8261A488800767DE5 /* FavoriteTripViewController.swift in Sources */,
