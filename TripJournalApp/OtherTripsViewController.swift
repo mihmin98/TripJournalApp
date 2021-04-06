@@ -11,7 +11,7 @@ import Alamofire
 class OtherTripsViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
-    var otherTrips: [Trip]?	
+    var otherTrips: [Trip]?	= []
     var selectedTrip: Trip?
     
     var finishedRequest: Bool = false

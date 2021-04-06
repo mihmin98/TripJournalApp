@@ -8,5 +8,5 @@
 import Foundation
 
 class Constants {
-    static let API_URL: String = "https://c50728168446.ngrok.io"
+    static let API_URL: String = "https://dde3570d52fb.ngrok.io"
 }

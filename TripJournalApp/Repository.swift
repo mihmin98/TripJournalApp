@@ -137,7 +137,7 @@ public class Repository {
             db = openDB()
         }
         
-        let deleteStatementString = "DELETE FROM trip WHERE id = \(String(describing: tripId));"
+        let deleteStatementString = "DELETE FROM trip WHERE id = '\(String(describing: tripId!))';"
         var deleteStatement:OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TripViewController: UIViewController {
 
@@ -37,6 +38,25 @@ class TripViewController: UIViewController {
             if let destinationViewController = segue.destination as? EditTripViewController {
                 destinationViewController.trip = trip
             }
+        }
+    }
+    
+    @IBAction func deleteTrip(_ sender: Any) {
+        // delete from db
+        // TODO: what to do if the trip was favorited by others?
+        
+        Repository().delete(tripId: trip!.id)
+        
+        // delete from firebase
+        let request = AF.request("\(Constants.API_URL)/trip/\(String(describing: trip!.id!))", method: .delete).validate()
+        
+        request.response() { response in
+            guard response.error == nil else {
+                print(response.error?.errorDescription?.description ?? "default value")
+                return
+            }
+            
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }

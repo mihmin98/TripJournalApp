@@ -373,6 +373,24 @@
                                     <navigationItem title="Your trip" id="HzA-Gt-aVg"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-A0-QlI">
+                                <rect key="frame" x="32" y="711.5" width="350" height="32"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="9ie-Jx-1eo"/>
+                                </constraints>
+                                <state key="normal" title="Delete Trip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteTrip:" destination="wKL-0f-xh7" eventType="touchUpInside" id="Drj-rK-Jer"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d8X-fm-e2u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -380,6 +398,7 @@
                             <constraint firstItem="ngR-xo-Ot1" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="5tp-t6-omq"/>
                             <constraint firstItem="Vox-2e-dM7" firstAttribute="top" secondItem="eFt-HY-d8j" secondAttribute="bottom" constant="32" id="64r-9Z-Ch2"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="eFt-HY-d8j" secondAttribute="trailing" constant="16" id="7nI-aW-W8i"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="xfb-A0-QlI" secondAttribute="trailing" constant="32" id="9q3-tH-IUI"/>
                             <constraint firstItem="lay-ST-HDR" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="AgK-cN-rVa"/>
                             <constraint firstItem="Vox-2e-dM7" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="N8N-lP-Jla"/>
                             <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="Ryp-vp-tdf"/>
@@ -397,7 +416,9 @@
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="ngR-xo-Ot1" secondAttribute="trailing" constant="16" id="q6e-C7-ejm"/>
                             <constraint firstItem="0fT-gh-HlC" firstAttribute="top" secondItem="ngR-xo-Ot1" secondAttribute="bottom" constant="32" id="s8Q-Yd-Zae"/>
                             <constraint firstItem="0fT-gh-HlC" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="ugA-Vg-2eq"/>
+                            <constraint firstItem="xfb-A0-QlI" firstAttribute="top" secondItem="RFh-2M-GOc" secondAttribute="bottom" constant="128" id="uvy-Uy-s8G"/>
                             <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="veu-9a-CLT"/>
+                            <constraint firstItem="xfb-A0-QlI" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="32" id="wtf-Qv-x4q"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -804,7 +825,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Q3a-Vo-EYd"/>
-        <segue reference="pa1-6u-cYy"/>
+        <segue reference="pqA-VM-0p2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="globe" catalog="system" width="128" height="121"/>
@@ -812,6 +833,9 @@
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
