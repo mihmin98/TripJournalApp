@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class OtherTripViewController: UIViewController {
 
@@ -51,14 +52,32 @@ class OtherTripViewController: UIViewController {
             // Add to favorites
             repo.addTrip(trip: trip!)
             repo.addFavoriteTrip(userId: CurrentUser.user.email!, tripId: trip!.id!)
-            // TODO: send to api that favorites have been updated
+            
+            let requestBody = FavoriteRequest(tripId: trip!.id!, userId: CurrentUser.user.email!)
+            let request = AF.request("\(Constants.API_URL)/trip/like", method: .post, parameters: requestBody, encoder: JSONParameterEncoder.default).validate()
+            
+            request.response() { response in
+                guard response.error == nil else {
+                    print(response.error?.errorDescription?.description ?? "default value")
+                    return
+                }
+            }
             
             favoriteButton.setTitle("Unfavorite", for: .normal)
         } else {
             // Remove from favorites
             repo.deleteFavoriteTrip(userId: CurrentUser.user.email!, tripId: trip!.id!)
             repo.delete(tripId: trip!.id)
-            // TODO: Send to api that favorites have been updated
+            
+            let requestBody = FavoriteRequest(tripId: trip!.id!, userId: CurrentUser.user.email!)
+            let request = AF.request("\(Constants.API_URL)/trip/unlike", method: .post, parameters: requestBody, encoder: JSONParameterEncoder.default).validate()
+            
+            request.response() { response in
+                guard response.error == nil else {
+                    print(response.error?.errorDescription?.description ?? "default value")
+                    return
+                }
+            }
             
             favoriteButton.setTitle("Favorite", for: .normal)
         }

@@ -52,10 +52,7 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     emptyRating.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
     emptyDescription.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
     createdTripAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-//        let homeViewController = self.storyboard?.instantiateViewController(identifier: "myTrips")
-//        homeViewController?.modalPresentationStyle = .fullScreen
-//        homeViewController?.modalTransitionStyle = .crossDissolve
-//        self.present(homeViewController!, animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }))
 
 
