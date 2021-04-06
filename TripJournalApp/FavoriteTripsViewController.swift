@@ -38,7 +38,7 @@ class FavoriteTripsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // view favorite trip segue; send trip
-        if segue.identifier == "viewOtherTripSegue" {
+        if segue.identifier == "viewFavoriteTripSegue" {
             // TODO: return to this after creating the ViewOtherTrip class etc
             if let destinationViewController = segue.destination as? OtherTripViewController {
                 destinationViewController.trip = selectedTrip
@@ -56,7 +56,7 @@ extension FavoriteTripsViewController: UICollectionViewDelegate {
         selectedTrip = favoriteTrips![indexPath.item]
 
         // Segue to another scene
-        performSegue(withIdentifier: "viewOtherTripSegue", sender: self)
+        performSegue(withIdentifier: "viewFavoriteTripSegue", sender: self)
     }
 }
 

@@ -82,15 +82,44 @@ public class Repository {
             db = openDB()
         }
         
-        let updateStatementString = "UPDATE trip SET ownerId = ?, name = ?, photo = ?, destinationName = ?, destinationCoords = ?, cost = ?, rating = ?, description = ?;"
+        let updateStatementString = "UPDATE trip SET ownerId = ?, name = ?, photo = ?, destinationName = ?, destinationCoords = ?, cost = ?, rating = ?, description = ? WHERE id = ?;"
         var updateStatement: OpaquePointer? = nil;
         if sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK {
-            if sqlite3_step(updateStatement) != SQLITE_DONE {
-                print("Could not update row")
-            }
+            let ownerId = trip.ownerId! as NSString
+            sqlite3_bind_text(updateStatement, 1, ownerId.utf8String, -1, SQLITE_TRANSIENT)
+            let tripName = trip.name! as NSString
+            sqlite3_bind_text(updateStatement, 2, tripName.utf8String, -1, SQLITE_TRANSIENT)
+            let tripPhoto = trip.photo! as NSString
+            sqlite3_bind_text(updateStatement, 3, tripPhoto.utf8String, -1, SQLITE_TRANSIENT)
+            let tripDestinationName = trip.destinationName! as NSString
+            sqlite3_bind_text(updateStatement, 4, tripDestinationName.utf8String, -1, SQLITE_TRANSIENT)
+            let tripDestinationCoords = trip.destinationCoords! as NSString
+            sqlite3_bind_text(updateStatement, 5, tripDestinationCoords.utf8String, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_double(updateStatement, 6, trip.cost)
+            sqlite3_bind_int(updateStatement, 7, trip.rating)
+            let tripDescription = trip.description! as NSString
+            sqlite3_bind_text(updateStatement, 8, tripDescription.utf8String, -1, SQLITE_TRANSIENT)
+            
+            let tripId = trip.id! as NSString
+            sqlite3_bind_text(updateStatement, 9, tripId.utf8String, -1, SQLITE_TRANSIENT)
         }
+
+        if sqlite3_step(updateStatement) != SQLITE_DONE {
+            print("Could not update row")
+        }
+        
         sqlite3_finalize(updateStatement)
         closeDbConnection()
+    }
+    
+    public func getTripById(tripId: String?) -> Trip? {
+        let query: String = "SELECT * FROM trip WHERE id = '\(String(describing: tripId!))';"
+        let trips = readTrips(query: query)
+        if trips.count == 1 {
+            return trips[0]
+        } else {
+            return nil
+        }
     }
     
     public func readMyTrips() -> [Trip] {

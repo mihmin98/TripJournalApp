@@ -78,9 +78,9 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    // Hide the keyboard
-    textField.resignFirstResponder()
-    return true
+        // Hide the keyboard
+        textField.resignFirstResponder()
+        return true
     }
 
     @IBAction func saveTrip(_ sender: Any) {
@@ -133,6 +133,10 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
             let repository = Repository()
             
             repository.update(trip: trip)
+            //print("edit trip id \(trip.id)")
+            
+            //let t = repository.getTripById(tripId: trip.id)
+            //print(t!.name)
         }
     }
 }
