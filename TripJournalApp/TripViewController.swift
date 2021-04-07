@@ -45,18 +45,35 @@ class TripViewController: UIViewController {
         // delete from db
         // TODO: what to do if the trip was favorited by others?
         
-        Repository().delete(tripId: trip!.id)
         
-        // delete from firebase
-        let request = AF.request("\(Constants.API_URL)/trip/\(String(describing: trip!.id!))", method: .delete).validate()
-        
-        request.response() { response in
-            guard response.error == nil else {
-                print(response.error?.errorDescription?.description ?? "default value")
-                return
-            }
+        let animation = CABasicAnimation(keyPath: "backgroundColor")
+        animation.fromValue = UIColor.white.cgColor
+        animation.toValue = UIColor.red.cgColor
+        animation.duration = 3
+        self.view.layer.add(animation, forKey: "backgroundColor")
+        let deleteAlert = UIAlertController(title: "Delete", message: "All data will be lost.", preferredStyle: UIAlertController.Style.alert)
+
+        deleteAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            Repository().delete(tripId: self.trip!.id)
+            // delete from firebase
+            let request = AF.request("\(Constants.API_URL)/trip/\(String(describing: self.trip!.id!))", method: .delete).validate()
             
-            self.navigationController?.popViewController(animated: true)
-        }
+            request.response() { response in
+                guard response.error == nil else {
+                    print(response.error?.errorDescription?.description ?? "default value")
+                    return
+                }
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }))
+
+        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            self.view.layer.removeAllAnimations()
+        }))
+
+        present(deleteAlert, animated: true, completion: nil)
+        
+
     }
 }

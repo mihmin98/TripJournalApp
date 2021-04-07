@@ -48,6 +48,11 @@ class OtherTripViewController: UIViewController {
     
     @IBAction func pressedFavoriteButton(_ sender: Any) {
         let repo = Repository()
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = 0.6
+        animation.values = [-20, 20, -20, 20, -10, 10, -5, 5, 0]
+        self.view.layer.add(animation, forKey: "shake")
         if favoriteButton.currentTitle == "Favorite" {
             // Add to favorites
             repo.addTrip(trip: trip!)
