@@ -7,6 +7,7 @@ target 'TripJournalApp' do
 
   # Pods for TripJournalApp
   pod 'Alamofire', '~> 5.2'
+  pod 'GoogleSignIn'
 
   target 'TripJournalAppTests' do
     inherit! :search_paths
