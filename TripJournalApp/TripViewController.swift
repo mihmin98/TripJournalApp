@@ -41,6 +41,19 @@ class TripViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func share(_ sender: UIButton) {
+        let text = "Hey! Take a look at my trip: " +
+            "\(trip!.name!) that is located in \(trip!.destinationName!) " +
+            "and it cost only \(trip!.cost). I rate it \(trip!.rating) / 5."
+        let textShare = [ text ]
+          let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+          activityViewController.popoverPresentationController?.sourceView = self.view
+          self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+
+    
     @IBAction func deleteTrip(_ sender: Any) {
         // delete from db
         // TODO: what to do if the trip was favorited by others?

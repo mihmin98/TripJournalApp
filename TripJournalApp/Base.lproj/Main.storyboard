@@ -397,11 +397,33 @@
                                     <navigationItem title="Your trip" id="HzA-Gt-aVg"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFb-ml-4Fb">
+                                <rect key="frame" x="248" y="684" width="150" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1n3-ju-e7B"/>
+                                    <constraint firstAttribute="height" constant="50" id="aBP-7Y-NFW"/>
+                                </constraints>
+                                <state key="normal" title="Share Trip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="share:" destination="fop-pr-U8A" eventType="touchUpInside" id="LQF-DT-kdr"/>
+                                    <action selector="share:" destination="wKL-0f-xh7" eventType="touchUpInside" id="fzT-uJ-35m"/>
+                                    <action selector="shareTrip:" destination="fop-pr-U8A" eventType="touchUpInside" id="AqJ-tR-vmv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-A0-QlI">
-                                <rect key="frame" x="32" y="711.5" width="350" height="32"/>
+                                <rect key="frame" x="16" y="684" width="150" height="50"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="9ie-Jx-1eo"/>
+                                    <constraint firstAttribute="width" constant="150" id="E7w-iX-WNd"/>
+                                    <constraint firstAttribute="height" constant="50" id="jEA-q5-iDC"/>
                                 </constraints>
                                 <state key="normal" title="Delete Trip">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -422,17 +444,20 @@
                             <constraint firstItem="ngR-xo-Ot1" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="5tp-t6-omq"/>
                             <constraint firstItem="Vox-2e-dM7" firstAttribute="top" secondItem="eFt-HY-d8j" secondAttribute="bottom" constant="32" id="64r-9Z-Ch2"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="eFt-HY-d8j" secondAttribute="trailing" constant="16" id="7nI-aW-W8i"/>
-                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="xfb-A0-QlI" secondAttribute="trailing" constant="32" id="9q3-tH-IUI"/>
                             <constraint firstItem="lay-ST-HDR" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="AgK-cN-rVa"/>
                             <constraint firstItem="Vox-2e-dM7" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="N8N-lP-Jla"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="nFb-ml-4Fb" secondAttribute="trailing" constant="16" id="PIu-b7-TMw"/>
                             <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="Ryp-vp-tdf"/>
                             <constraint firstItem="ngR-xo-Ot1" firstAttribute="centerX" secondItem="zSl-jc-8ka" secondAttribute="centerX" id="TKy-Ua-1ji"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="bottom" secondItem="xfb-A0-QlI" secondAttribute="bottom" constant="30" id="VW3-Q0-K5t"/>
                             <constraint firstItem="RFh-2M-GOc" firstAttribute="top" secondItem="Vox-2e-dM7" secondAttribute="bottom" constant="32" id="XrW-gm-5E9"/>
                             <constraint firstItem="ngR-xo-Ot1" firstAttribute="top" secondItem="d8X-fm-e2u" secondAttribute="top" constant="16" id="bOS-xc-0c8"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="Vox-2e-dM7" secondAttribute="trailing" constant="16" id="dL2-ST-KUG"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="lay-ST-HDR" secondAttribute="trailing" constant="16" id="ePg-Qt-JLe"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="0fT-gh-HlC" secondAttribute="trailing" constant="16" id="eS5-WZ-LTm"/>
                             <constraint firstItem="eFt-HY-d8j" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="gFm-KL-zdn"/>
+                            <constraint firstItem="d8X-fm-e2u" firstAttribute="bottom" secondItem="nFb-ml-4Fb" secondAttribute="bottom" constant="30" id="h4W-Fy-ICD"/>
+                            <constraint firstItem="xfb-A0-QlI" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="hHk-Ob-E7B"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="eFt-HY-d8j" secondAttribute="trailing" constant="16" id="kAG-h8-RdU"/>
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="RFh-2M-GOc" secondAttribute="trailing" constant="16" id="kAR-FQ-vZk"/>
                             <constraint firstItem="lay-ST-HDR" firstAttribute="top" secondItem="0fT-gh-HlC" secondAttribute="bottom" constant="32" id="kt9-3W-AnZ"/>
@@ -440,9 +465,7 @@
                             <constraint firstItem="d8X-fm-e2u" firstAttribute="trailing" secondItem="ngR-xo-Ot1" secondAttribute="trailing" constant="16" id="q6e-C7-ejm"/>
                             <constraint firstItem="0fT-gh-HlC" firstAttribute="top" secondItem="ngR-xo-Ot1" secondAttribute="bottom" constant="32" id="s8Q-Yd-Zae"/>
                             <constraint firstItem="0fT-gh-HlC" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="16" id="ugA-Vg-2eq"/>
-                            <constraint firstItem="xfb-A0-QlI" firstAttribute="top" secondItem="RFh-2M-GOc" secondAttribute="bottom" constant="128" id="uvy-Uy-s8G"/>
                             <constraint firstItem="eFt-HY-d8j" firstAttribute="top" secondItem="lay-ST-HDR" secondAttribute="bottom" constant="32" id="veu-9a-CLT"/>
-                            <constraint firstItem="xfb-A0-QlI" firstAttribute="leading" secondItem="d8X-fm-e2u" secondAttribute="leading" constant="32" id="wtf-Qv-x4q"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -469,8 +492,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xad-DK-W9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fop-pr-U8A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6267" y="-328"/>
+            <point key="canvasLocation" x="6266.666666666667" y="-328.125"/>
         </scene>
         <!--Edit Trip-->
         <scene sceneID="n4Q-t0-egG">
@@ -871,7 +895,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Q3a-Vo-EYd"/>
-        <segue reference="pa1-6u-cYy"/>
+        <segue reference="pqA-VM-0p2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="globe" catalog="system" width="128" height="121"/>
@@ -879,6 +903,9 @@
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

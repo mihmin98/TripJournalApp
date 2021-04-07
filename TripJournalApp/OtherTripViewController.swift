@@ -45,6 +45,7 @@ class OtherTripViewController: UIViewController {
         self.tripRating.text = "Rating: \(String(describing: trip!.rating)) / 5"
         self.tripDescription.text = "Description: \(String(describing: trip!.description!))"
     }
+
     
     @IBAction func pressedFavoriteButton(_ sender: Any) {
         let repo = Repository()
