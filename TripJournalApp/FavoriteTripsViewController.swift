@@ -21,8 +21,6 @@ class FavoriteTripsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-//        let trip = Trip(id: "jeg", ownerId: "dragan", name: "cisco", photo: "", destinationName: "corea", destinationCoords: "192.168.0.3", cost: 50, rating: 2, description: "aiurea", likedBy: [])
-//        repo.addTrip(trip: trip)
         Repository().addFavoriteTrip(userId: "cacat", tripId: "jeg")
     }
     
@@ -44,6 +42,16 @@ class FavoriteTripsViewController: UIViewController {
                 destinationViewController.trip = selectedTrip
             }
         }
+    }
+    
+    
+    @IBAction func signout(_ sender: Any) {
+        CurrentUser.user.email = nil
+        
+        let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "loginNavigationController")
+        viewcontroller?.modalPresentationStyle = .fullScreen
+        viewcontroller?.modalTransitionStyle = .crossDissolve
+        self.present(viewcontroller!, animated: true, completion: nil)
     }
 }
 

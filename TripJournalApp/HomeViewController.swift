@@ -51,6 +51,15 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func signout(_ sender: Any) {
+        CurrentUser.user.email = nil
+        
+        let viewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "loginNavigationController")
+        viewcontroller?.modalPresentationStyle = .fullScreen
+        viewcontroller?.modalTransitionStyle = .crossDissolve
+        self.present(viewcontroller!, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
