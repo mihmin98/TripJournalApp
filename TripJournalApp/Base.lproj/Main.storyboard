@@ -534,13 +534,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-Ob-eWY">
+                                <rect key="frame" x="16" y="501" width="382" height="17.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-Nt-ioO">
+                                <rect key="frame" x="129" y="737" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xFB-ZV-HxO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xFB-ZV-HxO" firstAttribute="trailing" secondItem="rd3-Rn-3tt" secondAttribute="trailing" constant="16" id="23i-Ux-xeo"/>
                             <constraint firstItem="xFB-ZV-HxO" firstAttribute="trailing" secondItem="2Un-VG-GHq" secondAttribute="trailing" constant="16" id="2vq-D8-Msh"/>
+                            <constraint firstItem="Hs3-Ob-eWY" firstAttribute="leading" secondItem="xFB-ZV-HxO" secondAttribute="leading" constant="16" id="32A-DQ-yrt"/>
                             <constraint firstItem="21i-4w-55I" firstAttribute="top" secondItem="2Un-VG-GHq" secondAttribute="bottom" constant="32" id="Bm8-SX-HXh"/>
+                            <constraint firstItem="xFB-ZV-HxO" firstAttribute="trailing" secondItem="Hs3-Ob-eWY" secondAttribute="trailing" constant="16" id="E9Y-J1-Nbo"/>
                             <constraint firstItem="H1D-QF-Trs" firstAttribute="leading" secondItem="xFB-ZV-HxO" secondAttribute="leading" constant="16" id="GVc-WQ-a22"/>
                             <constraint firstItem="xFB-ZV-HxO" firstAttribute="trailing" secondItem="H1D-QF-Trs" secondAttribute="trailing" constant="16" id="VWw-hv-YFj"/>
                             <constraint firstItem="dRc-Cw-vuH" firstAttribute="leading" secondItem="xFB-ZV-HxO" secondAttribute="leading" constant="16" id="Y5q-iO-sqi"/>
@@ -550,6 +560,7 @@
                             <constraint firstItem="Jv7-rG-ioZ" firstAttribute="top" secondItem="dRc-Cw-vuH" secondAttribute="bottom" constant="32" id="gPu-7S-4xS"/>
                             <constraint firstItem="xFB-ZV-HxO" firstAttribute="trailing" secondItem="dRc-Cw-vuH" secondAttribute="trailing" constant="16" id="iFk-wd-Gge"/>
                             <constraint firstItem="rd3-Rn-3tt" firstAttribute="top" secondItem="H1D-QF-Trs" secondAttribute="bottom" constant="32" id="iHr-E7-j3U"/>
+                            <constraint firstItem="Hs3-Ob-eWY" firstAttribute="top" secondItem="Jv7-rG-ioZ" secondAttribute="bottom" constant="16" id="n26-fL-1oi"/>
                             <constraint firstItem="xFB-ZV-HxO" firstAttribute="trailing" secondItem="21i-4w-55I" secondAttribute="trailing" constant="16" id="nOX-pP-dDj"/>
                             <constraint firstItem="dRc-Cw-vuH" firstAttribute="top" secondItem="rd3-Rn-3tt" secondAttribute="bottom" constant="32" id="pTY-P1-019"/>
                             <constraint firstItem="rd3-Rn-3tt" firstAttribute="leading" secondItem="xFB-ZV-HxO" secondAttribute="leading" constant="16" id="pxb-Hy-bWa"/>
@@ -571,11 +582,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tapToChangePictureButton" destination="J2Y-Nt-ioO" id="M4N-AV-9q8"/>
                         <outlet property="tripCost" destination="rd3-Rn-3tt" id="g8e-o9-GVj"/>
                         <outlet property="tripDescription" destination="Jv7-rG-ioZ" id="nrn-TC-BTF"/>
                         <outlet property="tripDestination" destination="21i-4w-55I" id="MsM-HA-Maq"/>
                         <outlet property="tripLocation" destination="H1D-QF-Trs" id="M7E-rG-fY3"/>
                         <outlet property="tripName" destination="2Un-VG-GHq" id="Bw2-Tz-q4w"/>
+                        <outlet property="tripPhotoView" destination="Hs3-Ob-eWY" id="3ur-7t-Ofc"/>
                         <outlet property="tripRating" destination="dRc-Cw-vuH" id="HyZ-as-qGf"/>
                     </connections>
                 </viewController>
@@ -900,6 +913,7 @@
     <resources>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
