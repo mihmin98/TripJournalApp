@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class TripViewController: UIViewController {
-
+    
     @IBOutlet weak var tripPhoto: UIImageView!
     @IBOutlet weak var tripName: UILabel!
     @IBOutlet weak var tripLocation: UILabel!
@@ -18,7 +18,7 @@ class TripViewController: UIViewController {
     @IBOutlet weak var tripDescription: UILabel!
     
     var trip: Trip?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +31,22 @@ class TripViewController: UIViewController {
         self.tripCost.text = "Cost: \(String(describing: trip!.cost))"
         self.tripRating.text = "Rating: \(String(describing: trip!.rating)) / 5"
         self.tripDescription.text = "Description: \(String(describing: trip!.description!))"
+        
+        if trip?.photo != nil && trip?.photo != "" {
+            // Get photo
+            let request = AF.request("\(Constants.API_URL)/trip/photo/\(trip!.photo!)", method: .get).validate()
+            
+            request.response { response in
+                guard response.error == nil else {
+                    print(response.error?.errorDescription?.description ?? "default value")
+                    return
+                }
+                
+                let base64Photo = response.value!
+                let imageData  = Data.init(base64Encoded: base64Photo!, options: .init(rawValue: 0))
+                self.tripPhoto.image = UIImage(data: imageData!)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,12 +63,12 @@ class TripViewController: UIViewController {
             "\(trip!.name!) that is located in \(trip!.destinationName!) " +
             "and it cost only \(trip!.cost). I rate it \(trip!.rating) / 5."
         let textShare = [ text ]
-          let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
-          activityViewController.popoverPresentationController?.sourceView = self.view
-          self.present(activityViewController, animated: true, completion: nil)
+        let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
-
+    
     
     @IBAction func deleteTrip(_ sender: Any) {
         // delete from db
@@ -65,7 +81,7 @@ class TripViewController: UIViewController {
         animation.duration = 3
         self.view.layer.add(animation, forKey: "backgroundColor")
         let deleteAlert = UIAlertController(title: "Delete", message: "All data will be lost.", preferredStyle: UIAlertController.Style.alert)
-
+        
         deleteAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             Repository().delete(tripId: self.trip!.id)
             // delete from firebase
@@ -80,13 +96,13 @@ class TripViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }))
-
+        
         deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             self.view.layer.removeAllAnimations()
         }))
-
+        
         present(deleteAlert, animated: true, completion: nil)
         
-
+        
     }
 }

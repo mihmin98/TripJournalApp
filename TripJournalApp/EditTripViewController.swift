@@ -22,6 +22,8 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var tripPhotoView: UIImageView!
     @IBOutlet var tapToChangePictureButton: UIButton!
     
+    var initialImage: UIImage?
+    
     var imagePicker: UIImagePickerController!
     
     let emptyName = UIAlertController(title: "Trip name is empty!",
@@ -88,6 +90,8 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
         tripPhotoView.addGestureRecognizer(imageTap)
         tripPhotoView.isUserInteractionEnabled = true
         tapToChangePictureButton.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
+        
+        initialImage = tripPhotoView.image
     }
     
     @objc func openImagePicker(_ sender: Any) {
@@ -113,7 +117,6 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     func addNewTrip() {
         let newTrip = Trip(ownerId: CurrentUser.user.email!, name: tripName.text!, photo: "", destinationName: tripDestination.text!, destinationCoords: tripLocation.text!, cost: Double(tripCost.text!)!, rating: Int32(tripRating.text!)!, description: tripDescription.text!, likedBy: [CurrentUser.user.email!])
         
-        
         let request = AF.request("\(Constants.API_URL)/trip",
                                  method: .post, parameters: newTrip, encoder: JSONParameterEncoder.default).validate()
         
@@ -125,11 +128,35 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
             }
             
             let createdTrip = response.value!
-            self.present(self.createdTripAlert, animated: true, completion: nil)
             
-            let repository = Repository()
-            
-            repository.addTrip(trip: createdTrip)
+            // if changed image from the default one then upload it
+            if self.initialImage != self.tripPhotoView.image {
+                let base64Image = self.tripPhotoView.image?.pngData()?.base64EncodedString() ?? ""
+                
+                let photoRequest = PhotoUploadRequest(tripId: createdTrip.id, photoBase64Encoded: base64Image)
+                
+                let imageUploadRequest = AF.request("\(Constants.API_URL)/trip/photo", method: .post, parameters: photoRequest, encoder: JSONParameterEncoder.default).validate()
+                
+                imageUploadRequest.response { response in
+                    guard response.error == nil else {
+                        print(response.error?.errorDescription?.description ?? "default value")
+                        self.present(self.createdTripAlert, animated: true, completion: nil)
+                        return
+                    }
+                    
+                    createdTrip.photo = String(data: response.data!, encoding: .utf8)
+                    
+                    self.present(self.createdTripAlert, animated: true, completion: nil)
+                    
+                    let repository = Repository()
+                    repository.addTrip(trip: createdTrip)
+                }
+            } else {
+                self.present(self.createdTripAlert, animated: true, completion: nil)
+                
+                let repository = Repository()
+                repository.addTrip(trip: createdTrip)
+            }
         }
     }
     
@@ -154,6 +181,8 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
             
             //let t = repository.getTripById(tripId: trip.id)
             //print(t!.name)
+            
+            //TODO: fix this?
         }
     }
 }

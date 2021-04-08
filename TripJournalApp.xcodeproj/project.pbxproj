@@ -17,6 +17,7 @@
 		E46C2A3B261B6B3C001DC16B /* FavoriteTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A3A261B6B3C001DC16B /* FavoriteTripsViewController.swift */; };
 		E46C2A43261B75EC001DC16B /* OtherTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A42261B75EC001DC16B /* OtherTripViewController.swift */; };
 		E46C2A48261B9BC5001DC16B /* OtherTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C2A47261B9BC5001DC16B /* OtherTripsViewController.swift */; };
+		E46F130C261F02F700F84368 /* PhotoUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F130B261F02F700F84368 /* PhotoUploadRequest.swift */; };
 		E480476C2619BC38006BC0C6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480476B2619BC38006BC0C6 /* HomeViewController.swift */; };
 		E48047722619F96A006BC0C6 /* TripViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48047702619F96A006BC0C6 /* TripViewCell.swift */; };
 		E48047732619F96A006BC0C6 /* TripViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48047712619F96A006BC0C6 /* TripViewCell.xib */; };
@@ -74,6 +75,7 @@
 		E46C2A3A261B6B3C001DC16B /* FavoriteTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTripsViewController.swift; sourceTree = "<group>"; };
 		E46C2A42261B75EC001DC16B /* OtherTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTripViewController.swift; sourceTree = "<group>"; };
 		E46C2A47261B9BC5001DC16B /* OtherTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTripsViewController.swift; sourceTree = "<group>"; };
+		E46F130B261F02F700F84368 /* PhotoUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadRequest.swift; sourceTree = "<group>"; };
 		E480476B2619BC38006BC0C6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E48047702619F96A006BC0C6 /* TripViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewCell.swift; sourceTree = "<group>"; };
 		E48047712619F96A006BC0C6 /* TripViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripViewCell.xib; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FB3D9C99261B6F720014945D /* EditTripViewController.swift */,
+				E46F130B261F02F700F84368 /* PhotoUploadRequest.swift */,
 				FBC0DC42261A0D00004EEF52 /* TripViewController.swift */,
 				E4C7084B26187BD300D4AFED /* AppDelegate.swift */,
 				E405E38A2618C23F00A73816 /* LoginViewController.swift */,
@@ -515,6 +518,7 @@
 				FBC78DE72618B7E100E3AA93 /* Trip.swift in Sources */,
 				FBC78DE22618AF5C00E3AA93 /* User.swift in Sources */,
 				E4C7085026187BD300D4AFED /* ViewController.swift in Sources */,
+				E46F130C261F02F700F84368 /* PhotoUploadRequest.swift in Sources */,
 				E405E3952618D76C00A73816 /* Constants.swift in Sources */,
 				E46C2A43261B75EC001DC16B /* OtherTripViewController.swift in Sources */,
 				FBC78DEC2618BB0900E3AA93 /* Favorites.swift in Sources */,

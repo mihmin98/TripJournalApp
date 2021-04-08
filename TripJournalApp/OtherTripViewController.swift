@@ -44,6 +44,22 @@ class OtherTripViewController: UIViewController {
         self.tripCost.text = "Cost: \(String(describing: trip!.cost))"
         self.tripRating.text = "Rating: \(String(describing: trip!.rating)) / 5"
         self.tripDescription.text = "Description: \(String(describing: trip!.description!))"
+        
+        if trip?.photo != nil && trip?.photo != "" {
+            // Get photo
+            let request = AF.request("\(Constants.API_URL)/trip/photo/\(trip!.photo!)", method: .get).validate()
+            
+            request.response { response in
+                guard response.error == nil else {
+                    print(response.error?.errorDescription?.description ?? "default value")
+                    return
+                }
+                
+                let base64Photo = response.value!
+                let imageData  = Data.init(base64Encoded: base64Photo!, options: .init(rawValue: 0))
+                self.tripPhoto.image = UIImage(data: imageData!)
+            }
+        }
     }
 
     
