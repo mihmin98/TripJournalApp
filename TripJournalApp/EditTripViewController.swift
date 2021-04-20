@@ -59,7 +59,8 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
         emptyRating.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
         emptyDescription.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
         createdTripAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            self.navigationController?.popViewController(animated: true)
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
         }))
         
         
@@ -111,10 +112,21 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
             return
         }
         //edit
+        updateTripObjectFields(trip: self.trip!)
         editTrip(trip: self.trip!)
     }
     
+    func updateTripObjectFields(trip: Trip!) {
+        trip.name = tripName.text
+        trip.destinationCoords = tripLocation.text
+        trip.destinationName = tripDestination.text
+        trip.cost = Double(tripCost!.text!)!
+        trip.rating = Int32(tripRating!.text!)!
+        trip.description = tripDescription.text
+    }
+    
     func addNewTrip() {
+        self.createdTripAlert.message = "Successfully created trip"
         let newTrip = Trip(ownerId: CurrentUser.user.email!, name: tripName.text!, photo: "", destinationName: tripDestination.text!, destinationCoords: tripLocation.text!, cost: Double(tripCost.text!)!, rating: Int32(tripRating.text!)!, description: tripDescription.text!, likedBy: [CurrentUser.user.email!])
         
         let request = AF.request("\(Constants.API_URL)/trip",
@@ -146,6 +158,7 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
                     
                     createdTrip.photo = String(data: response.data!, encoding: .utf8)
                     
+                    
                     self.present(self.createdTripAlert, animated: true, completion: nil)
                     
                     let repository = Repository()
@@ -161,7 +174,7 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     }
     
     func editTrip(trip: Trip) {
-        
+        self.createdTripAlert.message = "Successfully edited trip"
         print(trip)
         let request = AF.request("\(Constants.API_URL)/trip",
                                  method: .put, parameters: trip, encoder: JSONParameterEncoder.default).validate()
@@ -177,12 +190,6 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
             let repository = Repository()
             
             repository.update(trip: trip)
-            //print("edit trip id \(trip.id)")
-            
-            //let t = repository.getTripById(tripId: trip.id)
-            //print(t!.name)
-            
-            //TODO: fix this?
         }
     }
 }
