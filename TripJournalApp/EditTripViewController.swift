@@ -41,6 +41,7 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
     let emptyDescription = UIAlertController(title: "Trip description is empty!",
                                              message: "Please fill trip description", preferredStyle: .alert)
     let createdTripAlert = UIAlertController(title: "Created Trip", message: "Successfully created trip", preferredStyle: .alert)
+    let editedTripAlert = UIAlertController(title: "Edited Trip", message: "Successfully edited trip", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,10 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
         emptyRating.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
         emptyDescription.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
         createdTripAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
+        }))
+        editedTripAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
             self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
         }))
@@ -186,7 +191,7 @@ class EditTripViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             
-            self.present(self.createdTripAlert, animated: true, completion: nil)
+            self.present(self.editedTripAlert, animated: true, completion: nil)
             let repository = Repository()
             
             repository.update(trip: trip)
